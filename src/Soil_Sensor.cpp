@@ -83,14 +83,14 @@ void setup() {
   pinMode(green_pin, OUTPUT);
   pinMode(blue_pin, OUTPUT);
 
-  pinMode(soil_pin, INPUT_PULLUP);
+  pinMode(soil_pin, INPUT);
 
   delay(500);
 
   digitalWrite (red_pin, HIGH);
   digitalWrite (green_pin, HIGH);
   digitalWrite (blue_pin, HIGH);
-  delay(1000);
+  delay(100);
 
 
   // if(LTR390_Init() != 0){                          
@@ -114,7 +114,7 @@ void setup() {
 
  digitalWrite (blue_pin, HIGH);
 
- delay(2000);
+ delay(100);
 
 }
 
@@ -201,23 +201,25 @@ soil_percentage = 0;
     }
 
 ave_soil_val = val_accum/number_attempts;                 //  Determine average value
-soil_percentage = map(ave_soil_val, 3700, 2075,0,100);    //  Map average value
+soil_percentage = map(ave_soil_val, 3700, 1875,0,100);    //  Map average value
 
 new_soil_level = soil_level;
 
-// Serial.print(ave_soil_val);                            //  DEBUG
-// Serial.println(" ACG");                                //  DEBUG
- Serial.print(soil_percentage);                           //  DEBUG
+ Serial.print(val_new);                                //  DEBUG
+ Serial.println(" Single Read");                        //  DEBUG
+ Serial.print(ave_soil_val);                            //  DEBUG
+ Serial.println(" ACG");                                //  DEBUG
+ Serial.print(soil_percentage);                         //  DEBUG
  Serial.println(" %");
 
-  Serial.print("Soil Moisture: ");                //  DEBUG
-  Serial.println(soil_level);                     //  DEBUG
+  // Serial.print("Soil Moisture: ");                //  DEBUG
+  // Serial.println(soil_level);                     //  DEBUG
 
-  Serial.print("Upper Limit: ");                  //  DEBUG
-  Serial.println(water_upper);                    //  DEBUG
+  // Serial.print("Upper Limit: ");                  //  DEBUG
+  // Serial.println(water_upper);                    //  DEBUG
 
-  Serial.print("Lower Limit: ");                  //  DEBUG
-  Serial.println(water_lower);                    //  DEBUG
+  // Serial.print("Lower Limit: ");                  //  DEBUG
+  // Serial.println(water_lower);                    //  DEBUG
 }
 
 void U_V() {
@@ -300,7 +302,7 @@ void publish () {
     
     snprintf(data, sizeof(data) 
         , "{\"t\":\"%s\",\"new_sun_light_level\":%i,\"new_soil_level\":%i,\"sun_upper\":%i,\"sun_lower\":%i,\"water_upper\":%i,\"water_lower\":%i,\"H2O_Error\":%i,\"UV_Error\":%i}"
-        , BLYNK_AUTH_TOKEN, UV,new_soil_level,sun_upper,sun_lower,water_upper,water_lower,H2O_Error,UV_Error
+        , BLYNK_AUTH_TOKEN, UV,soil_percentage,sun_upper,sun_lower,water_upper,water_lower,H2O_Error,UV_Error
         );  
         
         Particle.publish("Send_smartpot_data", data, PRIVATE);
@@ -311,7 +313,7 @@ void loop() {
 
 unsigned long now = millis();
 	 
-  if ((now - lastTime) >= 60000) {
+  if ((now - lastTime) >= 300000) {
 		lastTime = now;
     soil();
     U_V();
