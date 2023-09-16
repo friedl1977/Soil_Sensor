@@ -211,7 +211,7 @@ soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //
 
 new_soil_level = soil_level;
 
-  Serial.print(val);                           //  DEBUG
+  Serial.print(val);                               //  DEBUG
   Serial.println(" Single Read");                  //  DEBUG
   Serial.print(ave_soil_val);                      //  DEBUG
   Serial.println(" ACG");                          //  DEBUG
@@ -323,7 +323,7 @@ void loop() {
 
 unsigned long now = millis();
 	 
-  if ((now - lastTime) >= 20000) {
+  if ((now - lastTime) >= 300000) {
 		lastTime = now;
     
     soil();
