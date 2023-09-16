@@ -45,8 +45,9 @@ UBYTE LTR390_Init(void)
 		return 1;
 	}
 
-    LTR390_Write(LTR390_MEAS_RATE, RESOLUTION_18BIT_TIME100MS | RATE_100MS);// default
-    LTR390_Write(LTR390_GAIN, GAIN_3); //default
+    LTR390_Write(LTR390_MEAS_RATE, RESOLUTION_13BIT_TIME12_5MS | RATE_100MS);// default
+    //LTR390_Write(LTR390_GAIN, GAIN_3); //default
+    LTR390_Write(LTR390_GAIN, GAIN_1); //default
     
 	return 0;
 }

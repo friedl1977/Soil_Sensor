@@ -7,47 +7,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000008c  085fd018  085fd018  0000d018  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .dynalib      00000008  023fdaa8  085fd0a8  0000daa8  2**3
+  2 .dynalib      00000008  023fda98  085fd0a8  0000da98  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .psram_text   00002544  023fdab0  085fd0b0  0000dab0  2**2
+  3 .psram_text   00002554  023fdaa0  085fd0b0  0000daa0  2**2
                   CONTENTS, ALLOC, LOAD, CODE
   4 .data_alt     00000000  023ffff4  023ffff4  00020000  2**0
                   CONTENTS
   5 .bss_alt      00000000  023ffff4  023ffff4  00020000  2**0
                   CONTENTS
-  6 .data         0000008c  1007acf0  085ff5f4  0001acf0  2**2
+  6 .data         0000008c  1007acf0  085ff604  0001acf0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .bss          0000026c  1007ad7c  1007ad7c  0002ad7c  2**2
                   ALLOC
   8 .secure_ram_text 00000000  1007e000  1007e000  00020000  2**0
                   CONTENTS
-  9 .backup       00000004  1007b400  085ff680  0001b400  2**2
+  9 .backup       00000004  1007b400  085ff690  0001b400  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 10 .module_info_suffix_align 00000934  085ff684  085ff684  0001f684  2**0
+ 10 .module_info_suffix_align 00000924  085ff694  085ff694  0001f694  2**0
                   ALLOC
- 11 .module_info_product 00000006  085fffb8  085fffb8  0001f684  2**0
+ 11 .module_info_product 00000006  085fffb8  085fffb8  0001f694  2**0
                   ALLOC
  12 .module_info_suffix 0000003e  085fffbe  085fffbe  0001ffbe  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
  13 .module_info_crc 00000004  085ffffc  085ffffc  0001fffc  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 14 .debug_info   00150702  00000000  00000000  00020000  2**0
+ 14 .debug_info   0015072e  00000000  00000000  00020000  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_abbrev 000158fa  00000000  00000000  00170702  2**0
+ 15 .debug_abbrev 000158fa  00000000  00000000  0017072e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_loc    00040c8b  00000000  00000000  00185ffc  2**0
+ 16 .debug_loc    00040c8b  00000000  00000000  00186028  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_aranges 00002db0  00000000  00000000  001c6c87  2**0
+ 17 .debug_aranges 00002db0  00000000  00000000  001c6cb3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_ranges 0000bfa8  00000000  00000000  001c9a37  2**0
+ 18 .debug_ranges 0000bfa8  00000000  00000000  001c9a63  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_macro  00028037  00000000  00000000  001d59df  2**0
+ 19 .debug_macro  00028037  00000000  00000000  001d5a0b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_line   00045316  00000000  00000000  001fda16  2**0
+ 20 .debug_line   00045334  00000000  00000000  001fda42  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_str    000d6d02  00000000  00000000  00242d2c  2**0
+ 21 .debug_str    000d6d02  00000000  00000000  00242d76  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_frame  00008238  00000000  00000000  00319a30  2**2
+ 22 .debug_frame  00008238  00000000  00000000  00319a78  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -123,16 +123,16 @@ __attribute__((section(".xip.text"))) void* module_user_pre_init() {
  85fd064:	bd08      	pop	{r3, pc}
  85fd066:	bf00      	nop
  85fd068:	1007acf0 	.word	0x1007acf0
- 85fd06c:	085ff5f4 	.word	0x085ff5f4
+ 85fd06c:	085ff604 	.word	0x085ff604
  85fd070:	1007ad7c 	.word	0x1007ad7c
  85fd074:	10110d2d 	.word	0x10110d2d
  85fd078:	1007ad7c 	.word	0x1007ad7c
  85fd07c:	1007afe8 	.word	0x1007afe8
  85fd080:	10110ea1 	.word	0x10110ea1
- 85fd084:	023fdaa8 	.word	0x023fdaa8
+ 85fd084:	023fda98 	.word	0x023fda98
  85fd088:	085fd0a8 	.word	0x085fd0a8
- 85fd08c:	023fdab0 	.word	0x023fdab0
- 85fd090:	023fdab0 	.word	0x023fdab0
+ 85fd08c:	023fdaa0 	.word	0x023fdaa0
+ 85fd090:	023fdaa0 	.word	0x023fdaa0
  85fd094:	085fd0b0 	.word	0x085fd0b0
  85fd098:	023ffff4 	.word	0x023ffff4
 
@@ -141,877 +141,880 @@ __attribute__((section(".xip.text"))) void* module_user_pre_init() {
 
 Disassembly of section .psram_text:
 
-023fdab0 <strcmp>:
- 23fdab0:	f810 2b01 	ldrb.w	r2, [r0], #1
- 23fdab4:	f811 3b01 	ldrb.w	r3, [r1], #1
- 23fdab8:	2a01      	cmp	r2, #1
- 23fdaba:	bf28      	it	cs
- 23fdabc:	429a      	cmpcs	r2, r3
- 23fdabe:	d0f7      	beq.n	23fdab0 <strcmp>
- 23fdac0:	1ad0      	subs	r0, r2, r3
+023fdaa0 <strcmp>:
+ 23fdaa0:	f810 2b01 	ldrb.w	r2, [r0], #1
+ 23fdaa4:	f811 3b01 	ldrb.w	r3, [r1], #1
+ 23fdaa8:	2a01      	cmp	r2, #1
+ 23fdaaa:	bf28      	it	cs
+ 23fdaac:	429a      	cmpcs	r2, r3
+ 23fdaae:	d0f7      	beq.n	23fdaa0 <strcmp>
+ 23fdab0:	1ad0      	subs	r0, r2, r3
+ 23fdab2:	4770      	bx	lr
+
+023fdab4 <strlen>:
+ 23fdab4:	4603      	mov	r3, r0
+ 23fdab6:	f813 2b01 	ldrb.w	r2, [r3], #1
+ 23fdaba:	2a00      	cmp	r2, #0
+ 23fdabc:	d1fb      	bne.n	23fdab6 <strlen+0x2>
+ 23fdabe:	1a18      	subs	r0, r3, r0
+ 23fdac0:	3801      	subs	r0, #1
  23fdac2:	4770      	bx	lr
 
-023fdac4 <strlen>:
- 23fdac4:	4603      	mov	r3, r0
- 23fdac6:	f813 2b01 	ldrb.w	r2, [r3], #1
- 23fdaca:	2a00      	cmp	r2, #0
- 23fdacc:	d1fb      	bne.n	23fdac6 <strlen+0x2>
- 23fdace:	1a18      	subs	r0, r3, r0
- 23fdad0:	3801      	subs	r0, #1
- 23fdad2:	4770      	bx	lr
-
-023fdad4 <module_user_init>:
+023fdac4 <module_user_init>:
 extern constructor_ptr_t link_constructors_location[];
 extern constructor_ptr_t link_constructors_end;
 #define link_constructors_size   ((unsigned long)&link_constructors_end  -  (unsigned long)&link_constructors_location )
 
 void module_user_init()
 {
- 23fdad4:	b570      	push	{r4, r5, r6, lr}
+ 23fdac4:	b570      	push	{r4, r5, r6, lr}
     module_user_init_hook();
- 23fdad6:	f001 fe75 	bl	23ff7c4 <module_user_init_hook>
+ 23fdac6:	f001 fe7d 	bl	23ff7c4 <module_user_init_hook>
 
     // invoke constructors
     unsigned ctor_num;
     for (ctor_num=0; ctor_num < link_constructors_size/sizeof(constructor_ptr_t); ctor_num++ )
- 23fdada:	2500      	movs	r5, #0
- 23fdadc:	4e05      	ldr	r6, [pc, #20]	; (23fdaf4 <module_user_init+0x20>)
- 23fdade:	4c06      	ldr	r4, [pc, #24]	; (23fdaf8 <module_user_init+0x24>)
- 23fdae0:	1ba4      	subs	r4, r4, r6
- 23fdae2:	08a4      	lsrs	r4, r4, #2
- 23fdae4:	42ac      	cmp	r4, r5
- 23fdae6:	d100      	bne.n	23fdaea <module_user_init+0x16>
+ 23fdaca:	2500      	movs	r5, #0
+ 23fdacc:	4e05      	ldr	r6, [pc, #20]	; (23fdae4 <module_user_init+0x20>)
+ 23fdace:	4c06      	ldr	r4, [pc, #24]	; (23fdae8 <module_user_init+0x24>)
+ 23fdad0:	1ba4      	subs	r4, r4, r6
+ 23fdad2:	08a4      	lsrs	r4, r4, #2
+ 23fdad4:	42ac      	cmp	r4, r5
+ 23fdad6:	d100      	bne.n	23fdada <module_user_init+0x16>
     {
         link_constructors_location[ctor_num]();
     }
 }
- 23fdae8:	bd70      	pop	{r4, r5, r6, pc}
+ 23fdad8:	bd70      	pop	{r4, r5, r6, pc}
         link_constructors_location[ctor_num]();
- 23fdaea:	f856 3b04 	ldr.w	r3, [r6], #4
- 23fdaee:	4798      	blx	r3
+ 23fdada:	f856 3b04 	ldr.w	r3, [r6], #4
+ 23fdade:	4798      	blx	r3
     for (ctor_num=0; ctor_num < link_constructors_size/sizeof(constructor_ptr_t); ctor_num++ )
- 23fdaf0:	3501      	adds	r5, #1
- 23fdaf2:	e7f7      	b.n	23fdae4 <module_user_init+0x10>
- 23fdaf4:	023fffd0 	.word	0x023fffd0
- 23fdaf8:	023ffff4 	.word	0x023ffff4
+ 23fdae0:	3501      	adds	r5, #1
+ 23fdae2:	e7f7      	b.n	23fdad4 <module_user_init+0x10>
+ 23fdae4:	023fffd0 	.word	0x023fffd0
+ 23fdae8:	023ffff4 	.word	0x023ffff4
 
-023fdafc <module_user_setup>:
+023fdaec <module_user_setup>:
 
 /**
  * Export these functions with a fuller name so they don't clash with the setup/loop wrappers in the system module.
  */
 void module_user_setup() {
     setup();
- 23fdafc:	f000 b87a 	b.w	23fdbf4 <setup>
+ 23fdaec:	f000 b9fc 	b.w	23fdee8 <setup>
 
-023fdb00 <module_user_loop>:
+023fdaf0 <module_user_loop>:
 }
 
 void module_user_loop() {
- 23fdb00:	b508      	push	{r3, lr}
+ 23fdaf0:	b508      	push	{r3, lr}
     loop();
- 23fdb02:	f000 fa67 	bl	23fdfd4 <loop>
+ 23fdaf2:	f000 fa6f 	bl	23fdfd4 <loop>
     _post_loop();
 }
- 23fdb06:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+ 23fdaf6:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
     _post_loop();
- 23fdb0a:	f001 be13 	b.w	23ff734 <_post_loop>
+ 23fdafa:	f001 be1b 	b.w	23ff734 <_post_loop>
 
-023fdb0e <_Znwj>:
+023fdafe <_Znwj>:
  * Implement C++ new/delete operators using the heap
  */
 
 void *operator new(size_t size)
 {
 	return malloc(size);
- 23fdb0e:	f000 be3f 	b.w	23fe790 <malloc>
+ 23fdafe:	f000 be47 	b.w	23fe790 <malloc>
 
-023fdb12 <_Znaj>:
- 23fdb12:	f000 be3d 	b.w	23fe790 <malloc>
+023fdb02 <_Znaj>:
+ 23fdb02:	f000 be45 	b.w	23fe790 <malloc>
 
-023fdb16 <_ZdlPvj>:
+023fdb06 <_ZdlPvj>:
 	free(p);
 }
 
 void operator delete(void *p, size_t size)
 {
 	free(p);
- 23fdb16:	f000 be49 	b.w	23fe7ac <free>
+ 23fdb06:	f000 be51 	b.w	23fe7ac <free>
 
-023fdb1a <__cxa_guard_acquire>:
+023fdb0a <__cxa_guard_acquire>:
 
 /* Provide default implemenation for __cxa_guard_acquire() and
  * __cxa_guard_release(). Note: these must be revisited if a multitasking
  * OS is ported to this platform. */
 __extension__ typedef int __guard __attribute__((mode (__DI__)));
 int __cxa_guard_acquire(__guard *g) {return !*(char *)(g);};
- 23fdb1a:	7800      	ldrb	r0, [r0, #0]
- 23fdb1c:	fab0 f080 	clz	r0, r0
- 23fdb20:	0940      	lsrs	r0, r0, #5
- 23fdb22:	4770      	bx	lr
+ 23fdb0a:	7800      	ldrb	r0, [r0, #0]
+ 23fdb0c:	fab0 f080 	clz	r0, r0
+ 23fdb10:	0940      	lsrs	r0, r0, #5
+ 23fdb12:	4770      	bx	lr
 
-023fdb24 <__cxa_guard_release>:
+023fdb14 <__cxa_guard_release>:
 void __cxa_guard_release (__guard *g) {*(char *)g = 1;};
- 23fdb24:	2301      	movs	r3, #1
- 23fdb26:	7003      	strb	r3, [r0, #0]
- 23fdb28:	4770      	bx	lr
+ 23fdb14:	2301      	movs	r3, #1
+ 23fdb16:	7003      	strb	r3, [r0, #0]
+ 23fdb18:	4770      	bx	lr
 	...
 
-023fdb2c <_Z10water_type6String>:
-
- delay(100);
+023fdb1c <_Z10water_type6String>:
+  Error_states ();
+  publish();
 
 }
 
 int water_type(String command) {                                // Exposing function/variable to the cloud
- 23fdb2c:	b510      	push	{r4, lr}
+ 23fdb1c:	b510      	push	{r4, lr}
 	operator StringIfHelperType() const { return buffer ? &String::StringIfHelper : 0; }
 	int compareTo(const String &s) const;
 	unsigned char equals(const String &s) const;
 	unsigned char equals(const char *cstr) const;
 	unsigned char operator == (const String &rhs) const {return equals(rhs);}
 	unsigned char operator == (const char *cstr) const {return equals(cstr);}
- 23fdb2e:	490d      	ldr	r1, [pc, #52]	; (23fdb64 <_Z10water_type6String+0x38>)
- 23fdb30:	4604      	mov	r4, r0
- 23fdb32:	f001 fc90 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb1e:	490d      	ldr	r1, [pc, #52]	; (23fdb54 <_Z10water_type6String+0x38>)
+ 23fdb20:	4604      	mov	r4, r0
+ 23fdb22:	f001 fc98 	bl	23ff456 <_ZNK6String6equalsEPKc>
   
   if(command == "0") {            // "Tropical"
- 23fdb36:	b118      	cbz	r0, 23fdb40 <_Z10water_type6String+0x14>
+ 23fdb26:	b118      	cbz	r0, 23fdb30 <_Z10water_type6String+0x14>
     soil_level = 0;
- 23fdb38:	2000      	movs	r0, #0
+ 23fdb28:	2000      	movs	r0, #0
   } else if (command == "1") {    // "Sub-Tropical"
     soil_level = 1;
     return 1;
 
   } else if (command == "2") {    // "Succulent"
     soil_level = 2;
- 23fdb3a:	4b0b      	ldr	r3, [pc, #44]	; (23fdb68 <_Z10water_type6String+0x3c>)
- 23fdb3c:	6018      	str	r0, [r3, #0]
+ 23fdb2a:	4b0b      	ldr	r3, [pc, #44]	; (23fdb58 <_Z10water_type6String+0x3c>)
+ 23fdb2c:	6018      	str	r0, [r3, #0]
     return 2;
   }
 
   else return -1;
 }
- 23fdb3e:	bd10      	pop	{r4, pc}
- 23fdb40:	4620      	mov	r0, r4
- 23fdb42:	490a      	ldr	r1, [pc, #40]	; (23fdb6c <_Z10water_type6String+0x40>)
- 23fdb44:	f001 fc87 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb2e:	bd10      	pop	{r4, pc}
+ 23fdb30:	4620      	mov	r0, r4
+ 23fdb32:	490a      	ldr	r1, [pc, #40]	; (23fdb5c <_Z10water_type6String+0x40>)
+ 23fdb34:	f001 fc8f 	bl	23ff456 <_ZNK6String6equalsEPKc>
   } else if (command == "1") {    // "Sub-Tropical"
- 23fdb48:	b108      	cbz	r0, 23fdb4e <_Z10water_type6String+0x22>
+ 23fdb38:	b108      	cbz	r0, 23fdb3e <_Z10water_type6String+0x22>
     soil_level = 1;
- 23fdb4a:	2001      	movs	r0, #1
- 23fdb4c:	e7f5      	b.n	23fdb3a <_Z10water_type6String+0xe>
- 23fdb4e:	4620      	mov	r0, r4
- 23fdb50:	4907      	ldr	r1, [pc, #28]	; (23fdb70 <_Z10water_type6String+0x44>)
- 23fdb52:	f001 fc80 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb3a:	2001      	movs	r0, #1
+ 23fdb3c:	e7f5      	b.n	23fdb2a <_Z10water_type6String+0xe>
+ 23fdb3e:	4620      	mov	r0, r4
+ 23fdb40:	4907      	ldr	r1, [pc, #28]	; (23fdb60 <_Z10water_type6String+0x44>)
+ 23fdb42:	f001 fc88 	bl	23ff456 <_ZNK6String6equalsEPKc>
   } else if (command == "2") {    // "Succulent"
- 23fdb56:	b108      	cbz	r0, 23fdb5c <_Z10water_type6String+0x30>
+ 23fdb46:	b108      	cbz	r0, 23fdb4c <_Z10water_type6String+0x30>
     soil_level = 2;
- 23fdb58:	2002      	movs	r0, #2
- 23fdb5a:	e7ee      	b.n	23fdb3a <_Z10water_type6String+0xe>
+ 23fdb48:	2002      	movs	r0, #2
+ 23fdb4a:	e7ee      	b.n	23fdb2a <_Z10water_type6String+0xe>
   else return -1;
- 23fdb5c:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
- 23fdb60:	e7ed      	b.n	23fdb3e <_Z10water_type6String+0x12>
- 23fdb62:	bf00      	nop
- 23fdb64:	023ffcd4 	.word	0x023ffcd4
- 23fdb68:	1007ae5c 	.word	0x1007ae5c
- 23fdb6c:	023ffcd6 	.word	0x023ffcd6
- 23fdb70:	023ffcd8 	.word	0x023ffcd8
+ 23fdb4c:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 23fdb50:	e7ed      	b.n	23fdb2e <_Z10water_type6String+0x12>
+ 23fdb52:	bf00      	nop
+ 23fdb54:	023ffcd4 	.word	0x023ffcd4
+ 23fdb58:	1007ae5c 	.word	0x1007ae5c
+ 23fdb5c:	023ffcd6 	.word	0x023ffcd6
+ 23fdb60:	023ffcd8 	.word	0x023ffcd8
 
-023fdb74 <_Z8sun_type6String>:
+023fdb64 <_Z8sun_type6String>:
 
 int sun_type(String command) {                                // Exposing function/variable to the cloud
- 23fdb74:	b510      	push	{r4, lr}
- 23fdb76:	4910      	ldr	r1, [pc, #64]	; (23fdbb8 <_Z8sun_type6String+0x44>)
- 23fdb78:	4604      	mov	r4, r0
- 23fdb7a:	f001 fc6c 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb64:	b510      	push	{r4, lr}
+ 23fdb66:	4910      	ldr	r1, [pc, #64]	; (23fdba8 <_Z8sun_type6String+0x44>)
+ 23fdb68:	4604      	mov	r4, r0
+ 23fdb6a:	f001 fc74 	bl	23ff456 <_ZNK6String6equalsEPKc>
 
   if(command == "0") {
- 23fdb7e:	b118      	cbz	r0, 23fdb88 <_Z8sun_type6String+0x14>
+ 23fdb6e:	b118      	cbz	r0, 23fdb78 <_Z8sun_type6String+0x14>
     sun_light_level = 0;
- 23fdb80:	2000      	movs	r0, #0
+ 23fdb70:	2000      	movs	r0, #0
   } else if (command == "2") {
     sun_light_level = 2;
     return 2;
   
   } else if (command == "3") {
     sun_light_level = 3;
- 23fdb82:	4b0e      	ldr	r3, [pc, #56]	; (23fdbbc <_Z8sun_type6String+0x48>)
- 23fdb84:	6018      	str	r0, [r3, #0]
+ 23fdb72:	4b0e      	ldr	r3, [pc, #56]	; (23fdbac <_Z8sun_type6String+0x48>)
+ 23fdb74:	6018      	str	r0, [r3, #0]
     return 3;  
   }
 
   else return -1;
 }
- 23fdb86:	bd10      	pop	{r4, pc}
- 23fdb88:	4620      	mov	r0, r4
- 23fdb8a:	490d      	ldr	r1, [pc, #52]	; (23fdbc0 <_Z8sun_type6String+0x4c>)
- 23fdb8c:	f001 fc63 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb76:	bd10      	pop	{r4, pc}
+ 23fdb78:	4620      	mov	r0, r4
+ 23fdb7a:	490d      	ldr	r1, [pc, #52]	; (23fdbb0 <_Z8sun_type6String+0x4c>)
+ 23fdb7c:	f001 fc6b 	bl	23ff456 <_ZNK6String6equalsEPKc>
   } else if (command == "1") {
- 23fdb90:	b108      	cbz	r0, 23fdb96 <_Z8sun_type6String+0x22>
+ 23fdb80:	b108      	cbz	r0, 23fdb86 <_Z8sun_type6String+0x22>
     sun_light_level = 1;
- 23fdb92:	2001      	movs	r0, #1
- 23fdb94:	e7f5      	b.n	23fdb82 <_Z8sun_type6String+0xe>
- 23fdb96:	4620      	mov	r0, r4
- 23fdb98:	490a      	ldr	r1, [pc, #40]	; (23fdbc4 <_Z8sun_type6String+0x50>)
- 23fdb9a:	f001 fc5c 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb82:	2001      	movs	r0, #1
+ 23fdb84:	e7f5      	b.n	23fdb72 <_Z8sun_type6String+0xe>
+ 23fdb86:	4620      	mov	r0, r4
+ 23fdb88:	490a      	ldr	r1, [pc, #40]	; (23fdbb4 <_Z8sun_type6String+0x50>)
+ 23fdb8a:	f001 fc64 	bl	23ff456 <_ZNK6String6equalsEPKc>
   } else if (command == "2") {
- 23fdb9e:	b108      	cbz	r0, 23fdba4 <_Z8sun_type6String+0x30>
+ 23fdb8e:	b108      	cbz	r0, 23fdb94 <_Z8sun_type6String+0x30>
     sun_light_level = 2;
- 23fdba0:	2002      	movs	r0, #2
- 23fdba2:	e7ee      	b.n	23fdb82 <_Z8sun_type6String+0xe>
- 23fdba4:	4620      	mov	r0, r4
- 23fdba6:	4908      	ldr	r1, [pc, #32]	; (23fdbc8 <_Z8sun_type6String+0x54>)
- 23fdba8:	f001 fc55 	bl	23ff456 <_ZNK6String6equalsEPKc>
+ 23fdb90:	2002      	movs	r0, #2
+ 23fdb92:	e7ee      	b.n	23fdb72 <_Z8sun_type6String+0xe>
+ 23fdb94:	4620      	mov	r0, r4
+ 23fdb96:	4908      	ldr	r1, [pc, #32]	; (23fdbb8 <_Z8sun_type6String+0x54>)
+ 23fdb98:	f001 fc5d 	bl	23ff456 <_ZNK6String6equalsEPKc>
   } else if (command == "3") {
- 23fdbac:	b108      	cbz	r0, 23fdbb2 <_Z8sun_type6String+0x3e>
+ 23fdb9c:	b108      	cbz	r0, 23fdba2 <_Z8sun_type6String+0x3e>
     sun_light_level = 3;
- 23fdbae:	2003      	movs	r0, #3
- 23fdbb0:	e7e7      	b.n	23fdb82 <_Z8sun_type6String+0xe>
+ 23fdb9e:	2003      	movs	r0, #3
+ 23fdba0:	e7e7      	b.n	23fdb72 <_Z8sun_type6String+0xe>
   else return -1;
- 23fdbb2:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
- 23fdbb6:	e7e6      	b.n	23fdb86 <_Z8sun_type6String+0x12>
- 23fdbb8:	023ffcd4 	.word	0x023ffcd4
- 23fdbbc:	1007ae64 	.word	0x1007ae64
- 23fdbc0:	023ffcd6 	.word	0x023ffcd6
- 23fdbc4:	023ffcd8 	.word	0x023ffcd8
- 23fdbc8:	023ffcda 	.word	0x023ffcda
+ 23fdba2:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 23fdba6:	e7e6      	b.n	23fdb76 <_Z8sun_type6String+0x12>
+ 23fdba8:	023ffcd4 	.word	0x023ffcd4
+ 23fdbac:	1007ae64 	.word	0x1007ae64
+ 23fdbb0:	023ffcd6 	.word	0x023ffcd6
+ 23fdbb4:	023ffcd8 	.word	0x023ffcd8
+ 23fdbb8:	023ffcda 	.word	0x023ffcda
 
-023fdbcc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>:
+023fdbbc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>:
     size_t vprintf(bool newline, const char* format, va_list args) __attribute__ ((format(printf, 3, 0)));
 };
 
 template <typename T, std::enable_if_t<!std::is_base_of<Printable, T>::value && (std::is_integral<T>::value || std::is_convertible<T, unsigned long long>::value ||
     std::is_convertible<T, long long>::value), int>>
 size_t Print::print(T n, int base)
- 23fdbcc:	b570      	push	{r4, r5, r6, lr}
+ 23fdbbc:	b570      	push	{r4, r5, r6, lr}
 // FIXME: avoids 'comparison of constant '0' with boolean expression is always false'
 #if __GNUC__ >= 9
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wbool-compare"
 #endif // __GNUC__ >= 9
         if (n < 0 && base == 10) {
- 23fdbce:	1e0c      	subs	r4, r1, #0
+ 23fdbbe:	1e0c      	subs	r4, r1, #0
 size_t Print::print(T n, int base)
- 23fdbd0:	4606      	mov	r6, r0
- 23fdbd2:	4615      	mov	r5, r2
+ 23fdbc0:	4606      	mov	r6, r0
+ 23fdbc2:	4615      	mov	r5, r2
         if (n < 0 && base == 10) {
- 23fdbd4:	da0b      	bge.n	23fdbee <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x22>
- 23fdbd6:	2a0a      	cmp	r2, #10
- 23fdbd8:	d109      	bne.n	23fdbee <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x22>
+ 23fdbc4:	da0b      	bge.n	23fdbde <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x22>
+ 23fdbc6:	2a0a      	cmp	r2, #10
+ 23fdbc8:	d109      	bne.n	23fdbde <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x22>
             t = print('-');
- 23fdbda:	212d      	movs	r1, #45	; 0x2d
- 23fdbdc:	f001 fb7a 	bl	23ff2d4 <_ZN5Print5printEc>
+ 23fdbca:	212d      	movs	r1, #45	; 0x2d
+ 23fdbcc:	f001 fb82 	bl	23ff2d4 <_ZN5Print5printEc>
             val = -n;
- 23fdbe0:	4261      	negs	r1, r4
+ 23fdbd0:	4261      	negs	r1, r4
             val = n;
         }
 #if __GNUC__ >= 9
 #pragma GCC diagnostic pop
 #endif // __GNUC__ >= 9
         return printNumber(val, base) + t;
- 23fdbe2:	4630      	mov	r0, r6
- 23fdbe4:	b2ea      	uxtb	r2, r5
+ 23fdbd2:	4630      	mov	r0, r6
+ 23fdbd4:	b2ea      	uxtb	r2, r5
     }
 }
- 23fdbe6:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+ 23fdbd6:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
         return printNumber(val, base) + t;
- 23fdbea:	f001 bb8c 	b.w	23ff306 <_ZN5Print11printNumberEmh>
+ 23fdbda:	f001 bb94 	b.w	23ff306 <_ZN5Print11printNumberEmh>
             val = n;
- 23fdbee:	4621      	mov	r1, r4
- 23fdbf0:	e7f7      	b.n	23fdbe2 <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x16>
+ 23fdbde:	4621      	mov	r1, r4
+ 23fdbe0:	e7f7      	b.n	23fdbd2 <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0+0x16>
 	...
 
-023fdbf4 <setup>:
-void setup() {
- 23fdbf4:	b570      	push	{r4, r5, r6, lr}
-        return _function(name, args...);
-    }
-
-    static bool _function(const char *funcKey, user_function_int_str_t* func)
-    {
-        return register_function(call_raw_user_function, (void*)func, funcKey);
- 23fdbf6:	4c2d      	ldr	r4, [pc, #180]	; (23fdcac <setup+0xb8>)
-  pinMode(red_pin, OUTPUT);
- 23fdbf8:	4e2d      	ldr	r6, [pc, #180]	; (23fdcb0 <setup+0xbc>)
- 23fdbfa:	4620      	mov	r0, r4
- 23fdbfc:	4a2d      	ldr	r2, [pc, #180]	; (23fdcb4 <setup+0xc0>)
- 23fdbfe:	492e      	ldr	r1, [pc, #184]	; (23fdcb8 <setup+0xc4>)
- 23fdc00:	f000 fef1 	bl	23fe9e6 <_ZN10CloudClass17register_functionEPFiPvPKcS0_ES0_S2_>
-  pinMode(green_pin, OUTPUT);
- 23fdc04:	4d2d      	ldr	r5, [pc, #180]	; (23fdcbc <setup+0xc8>)
- 23fdc06:	4a2e      	ldr	r2, [pc, #184]	; (23fdcc0 <setup+0xcc>)
- 23fdc08:	4620      	mov	r0, r4
- 23fdc0a:	492e      	ldr	r1, [pc, #184]	; (23fdcc4 <setup+0xd0>)
- 23fdc0c:	f000 feeb 	bl	23fe9e6 <_ZN10CloudClass17register_functionEPFiPvPKcS0_ES0_S2_>
-  pinMode(blue_pin, OUTPUT);
- 23fdc10:	4c2d      	ldr	r4, [pc, #180]	; (23fdcc8 <setup+0xd4>)
-  pinMode(red_pin, OUTPUT);
- 23fdc12:	8830      	ldrh	r0, [r6, #0]
- 23fdc14:	2101      	movs	r1, #1
- 23fdc16:	f001 fe45 	bl	23ff8a4 <pinMode>
-  pinMode(green_pin, OUTPUT);
- 23fdc1a:	8828      	ldrh	r0, [r5, #0]
- 23fdc1c:	2101      	movs	r1, #1
- 23fdc1e:	f001 fe41 	bl	23ff8a4 <pinMode>
-  pinMode(blue_pin, OUTPUT);
- 23fdc22:	8820      	ldrh	r0, [r4, #0]
- 23fdc24:	2101      	movs	r1, #1
- 23fdc26:	f001 fe3d 	bl	23ff8a4 <pinMode>
-  pinMode(soil_pin, INPUT);
- 23fdc2a:	4b28      	ldr	r3, [pc, #160]	; (23fdccc <setup+0xd8>)
- 23fdc2c:	2100      	movs	r1, #0
- 23fdc2e:	8818      	ldrh	r0, [r3, #0]
- 23fdc30:	f001 fe38 	bl	23ff8a4 <pinMode>
-  delay(500);
- 23fdc34:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
- 23fdc38:	f000 fe26 	bl	23fe888 <delay>
-  digitalWrite (red_pin, HIGH);
- 23fdc3c:	8830      	ldrh	r0, [r6, #0]
- 23fdc3e:	2101      	movs	r1, #1
- 23fdc40:	f001 fe41 	bl	23ff8c6 <digitalWrite>
-  digitalWrite (green_pin, HIGH);
- 23fdc44:	8828      	ldrh	r0, [r5, #0]
- 23fdc46:	2101      	movs	r1, #1
- 23fdc48:	f001 fe3d 	bl	23ff8c6 <digitalWrite>
-  digitalWrite (blue_pin, HIGH);
- 23fdc4c:	2101      	movs	r1, #1
- 23fdc4e:	8820      	ldrh	r0, [r4, #0]
- 23fdc50:	f001 fe39 	bl	23ff8c6 <digitalWrite>
-  delay(100);
- 23fdc54:	2064      	movs	r0, #100	; 0x64
- 23fdc56:	f000 fe17 	bl	23fe888 <delay>
- digitalWrite (red_pin, LOW);
- 23fdc5a:	2100      	movs	r1, #0
- 23fdc5c:	8830      	ldrh	r0, [r6, #0]
- 23fdc5e:	f001 fe32 	bl	23ff8c6 <digitalWrite>
- delay(1000);
- 23fdc62:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 23fdc66:	f000 fe0f 	bl	23fe888 <delay>
- digitalWrite (red_pin, HIGH);
- 23fdc6a:	8830      	ldrh	r0, [r6, #0]
- 23fdc6c:	2101      	movs	r1, #1
- 23fdc6e:	f001 fe2a 	bl	23ff8c6 <digitalWrite>
- digitalWrite (green_pin, LOW);
- 23fdc72:	2100      	movs	r1, #0
- 23fdc74:	8828      	ldrh	r0, [r5, #0]
- 23fdc76:	f001 fe26 	bl	23ff8c6 <digitalWrite>
- delay(1000);
- 23fdc7a:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 23fdc7e:	f000 fe03 	bl	23fe888 <delay>
- digitalWrite (green_pin, HIGH);
- 23fdc82:	8828      	ldrh	r0, [r5, #0]
- 23fdc84:	2101      	movs	r1, #1
- 23fdc86:	f001 fe1e 	bl	23ff8c6 <digitalWrite>
- digitalWrite (blue_pin, LOW);
- 23fdc8a:	2100      	movs	r1, #0
- 23fdc8c:	8820      	ldrh	r0, [r4, #0]
- 23fdc8e:	f001 fe1a 	bl	23ff8c6 <digitalWrite>
- delay(1000);
- 23fdc92:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 23fdc96:	f000 fdf7 	bl	23fe888 <delay>
- digitalWrite (blue_pin, HIGH);
- 23fdc9a:	8820      	ldrh	r0, [r4, #0]
- 23fdc9c:	2101      	movs	r1, #1
- 23fdc9e:	f001 fe12 	bl	23ff8c6 <digitalWrite>
-}
- 23fdca2:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
- delay(100);
- 23fdca6:	2064      	movs	r0, #100	; 0x64
- 23fdca8:	f000 bdee 	b.w	23fe888 <delay>
- 23fdcac:	023fe9bb 	.word	0x023fe9bb
- 23fdcb0:	1007ad08 	.word	0x1007ad08
- 23fdcb4:	023ffcdc 	.word	0x023ffcdc
- 23fdcb8:	023fdb2d 	.word	0x023fdb2d
- 23fdcbc:	1007acf8 	.word	0x1007acf8
- 23fdcc0:	023ffce2 	.word	0x023ffce2
- 23fdcc4:	023fdb75 	.word	0x023fdb75
- 23fdcc8:	1007acf4 	.word	0x1007acf4
- 23fdccc:	1007ad0c 	.word	0x1007ad0c
-
-023fdcd0 <_Z4soilv>:
+023fdbe4 <_Z4soilv>:
 
 
 void soil() {
- 23fdcd0:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 23fdbe4:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
 
 switch (soil_level) {
- 23fdcd4:	f8df 80fc 	ldr.w	r8, [pc, #252]	; 23fddd4 <_Z4soilv+0x104>
- 23fdcd8:	4a34      	ldr	r2, [pc, #208]	; (23fddac <_Z4soilv+0xdc>)
- 23fdcda:	f8d8 1000 	ldr.w	r1, [r8]
- 23fdcde:	4b34      	ldr	r3, [pc, #208]	; (23fddb0 <_Z4soilv+0xe0>)
- 23fdce0:	2901      	cmp	r1, #1
- 23fdce2:	d022      	beq.n	23fdd2a <_Z4soilv+0x5a>
- 23fdce4:	2902      	cmp	r1, #2
- 23fdce6:	d024      	beq.n	23fdd32 <_Z4soilv+0x62>
- 23fdce8:	bb29      	cbnz	r1, 23fdd36 <_Z4soilv+0x66>
+ 23fdbe8:	f8df 80fc 	ldr.w	r8, [pc, #252]	; 23fdce8 <_Z4soilv+0x104>
+ 23fdbec:	4a34      	ldr	r2, [pc, #208]	; (23fdcc0 <_Z4soilv+0xdc>)
+ 23fdbee:	f8d8 1000 	ldr.w	r1, [r8]
+ 23fdbf2:	4b34      	ldr	r3, [pc, #208]	; (23fdcc4 <_Z4soilv+0xe0>)
+ 23fdbf4:	2901      	cmp	r1, #1
+ 23fdbf6:	d022      	beq.n	23fdc3e <_Z4soilv+0x5a>
+ 23fdbf8:	2902      	cmp	r1, #2
+ 23fdbfa:	d024      	beq.n	23fdc46 <_Z4soilv+0x62>
+ 23fdbfc:	bb29      	cbnz	r1, 23fdc4a <_Z4soilv+0x66>
 
   case 0:                 // Plants that require less watering - Succulent
     water_upper = 20;
- 23fdcea:	2114      	movs	r1, #20
- 23fdcec:	6011      	str	r1, [r2, #0]
+ 23fdbfe:	2114      	movs	r1, #20
+ 23fdc00:	6011      	str	r1, [r2, #0]
     water_lower = 5;
- 23fdcee:	2205      	movs	r2, #5
+ 23fdc02:	2205      	movs	r2, #5
     break;
     
   case 1:
     water_upper = 40;     // Plants that require MODERATE watering - Most plants are covered in this category
     water_lower = 20;
- 23fdcf0:	601a      	str	r2, [r3, #0]
+ 23fdc04:	601a      	str	r2, [r3, #0]
 
 int val_prev = 0;                                 //  temporary variables to determine  
 int val_new = 0;                                  //  ..
 int val_accum = 0;                                //  average value from multiple readings
 
 ave_soil_val = 0;                               
- 23fdcf2:	2400      	movs	r4, #0
+ 23fdc06:	2400      	movs	r4, #0
 int val_prev = 0;                                 //  temporary variables to determine  
- 23fdcf4:	4625      	mov	r5, r4
+ 23fdc08:	4625      	mov	r5, r4
 ave_soil_val = 0;                               
- 23fdcf6:	4f2f      	ldr	r7, [pc, #188]	; (23fddb4 <_Z4soilv+0xe4>)
+ 23fdc0a:	4f2f      	ldr	r7, [pc, #188]	; (23fdcc8 <_Z4soilv+0xe4>)
 soil_percentage = 0;
- 23fdcf8:	4e2f      	ldr	r6, [pc, #188]	; (23fddb8 <_Z4soilv+0xe8>)
+ 23fdc0c:	4e2f      	ldr	r6, [pc, #188]	; (23fdccc <_Z4soilv+0xe8>)
   
     for (int i=0; i<number_attempts; i++) {       //  Start taking measurements
- 23fdcfa:	f8df b0dc 	ldr.w	fp, [pc, #220]	; 23fddd8 <_Z4soilv+0x108>
- 23fdcfe:	f8df 90dc 	ldr.w	r9, [pc, #220]	; 23fdddc <_Z4soilv+0x10c>
+ 23fdc0e:	f8df b0dc 	ldr.w	fp, [pc, #220]	; 23fdcec <_Z4soilv+0x108>
+ 23fdc12:	f8df 90dc 	ldr.w	r9, [pc, #220]	; 23fdcf0 <_Z4soilv+0x10c>
 
         val = analogRead(soil_pin);
- 23fdd02:	f8df a0dc 	ldr.w	sl, [pc, #220]	; 23fdde0 <_Z4soilv+0x110>
+ 23fdc16:	f8df a0dc 	ldr.w	sl, [pc, #220]	; 23fdcf4 <_Z4soilv+0x110>
 ave_soil_val = 0;                               
- 23fdd06:	603c      	str	r4, [r7, #0]
+ 23fdc1a:	603c      	str	r4, [r7, #0]
 soil_percentage = 0;
- 23fdd08:	6034      	str	r4, [r6, #0]
+ 23fdc1c:	6034      	str	r4, [r6, #0]
     for (int i=0; i<number_attempts; i++) {       //  Start taking measurements
- 23fdd0a:	f8db 0000 	ldr.w	r0, [fp]
- 23fdd0e:	42a0      	cmp	r0, r4
- 23fdd10:	dd15      	ble.n	23fdd3e <_Z4soilv+0x6e>
+ 23fdc1e:	f8db 0000 	ldr.w	r0, [fp]
+ 23fdc22:	42a0      	cmp	r0, r4
+ 23fdc24:	dd15      	ble.n	23fdc52 <_Z4soilv+0x6e>
         val = analogRead(soil_pin);
- 23fdd12:	f8ba 0000 	ldrh.w	r0, [sl]
- 23fdd16:	f001 fdef 	bl	23ff8f8 <analogRead>
- 23fdd1a:	f8c9 0000 	str.w	r0, [r9]
+ 23fdc26:	f8ba 0000 	ldrh.w	r0, [sl]
+ 23fdc2a:	f001 fe65 	bl	23ff8f8 <analogRead>
+ 23fdc2e:	f8c9 0000 	str.w	r0, [r9]
         val_new = val;
         val_accum = (val_new + val_prev);   
- 23fdd1e:	4405      	add	r5, r0
+ 23fdc32:	4405      	add	r5, r0
 
         val_prev = val_accum;                     // Accumilated value over all samples 
         delay(50);
- 23fdd20:	2032      	movs	r0, #50	; 0x32
- 23fdd22:	f000 fdb1 	bl	23fe888 <delay>
+ 23fdc34:	2032      	movs	r0, #50	; 0x32
+ 23fdc36:	f000 fe27 	bl	23fe888 <delay>
     for (int i=0; i<number_attempts; i++) {       //  Start taking measurements
- 23fdd26:	3401      	adds	r4, #1
- 23fdd28:	e7ef      	b.n	23fdd0a <_Z4soilv+0x3a>
+ 23fdc3a:	3401      	adds	r4, #1
+ 23fdc3c:	e7ef      	b.n	23fdc1e <_Z4soilv+0x3a>
     water_upper = 40;     // Plants that require MODERATE watering - Most plants are covered in this category
- 23fdd2a:	2128      	movs	r1, #40	; 0x28
- 23fdd2c:	6011      	str	r1, [r2, #0]
+ 23fdc3e:	2128      	movs	r1, #40	; 0x28
+ 23fdc40:	6011      	str	r1, [r2, #0]
     water_lower = 20;
- 23fdd2e:	2214      	movs	r2, #20
- 23fdd30:	e7de      	b.n	23fdcf0 <_Z4soilv+0x20>
+ 23fdc42:	2214      	movs	r2, #20
+ 23fdc44:	e7de      	b.n	23fdc04 <_Z4soilv+0x20>
     water_upper = 60;     // Plants that require more watering - Tropical
- 23fdd32:	213c      	movs	r1, #60	; 0x3c
- 23fdd34:	e7fa      	b.n	23fdd2c <_Z4soilv+0x5c>
+ 23fdc46:	213c      	movs	r1, #60	; 0x3c
+ 23fdc48:	e7fa      	b.n	23fdc40 <_Z4soilv+0x5c>
     water_upper = 0;
- 23fdd36:	2100      	movs	r1, #0
- 23fdd38:	6011      	str	r1, [r2, #0]
+ 23fdc4a:	2100      	movs	r1, #0
+ 23fdc4c:	6011      	str	r1, [r2, #0]
     water_lower = 0;
- 23fdd3a:	6019      	str	r1, [r3, #0]
+ 23fdc4e:	6019      	str	r1, [r3, #0]
     break;
- 23fdd3c:	e7d9      	b.n	23fdcf2 <_Z4soilv+0x22>
+ 23fdc50:	e7d9      	b.n	23fdc06 <_Z4soilv+0x22>
     }
 
 ave_soil_val = val_accum/number_attempts;                   //  Determine average value
 //soil_percentage = map(ave_soil_val, 3700, 1875,0,100);    //  Map average value with pullup
 soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //  Map average value
- 23fdd3e:	2364      	movs	r3, #100	; 0x64
+ 23fdc52:	2364      	movs	r3, #100	; 0x64
 ave_soil_val = val_accum/number_attempts;                   //  Determine average value
- 23fdd40:	fb95 f0f0 	sdiv	r0, r5, r0
+ 23fdc54:	fb95 f0f0 	sdiv	r0, r5, r0
 soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //  Map average value
- 23fdd44:	4a1d      	ldr	r2, [pc, #116]	; (23fddbc <_Z4soilv+0xec>)
- 23fdd46:	491e      	ldr	r1, [pc, #120]	; (23fddc0 <_Z4soilv+0xf0>)
- 23fdd48:	9300      	str	r3, [sp, #0]
- 23fdd4a:	6809      	ldr	r1, [r1, #0]
- 23fdd4c:	2300      	movs	r3, #0
- 23fdd4e:	6812      	ldr	r2, [r2, #0]
+ 23fdc58:	4a1d      	ldr	r2, [pc, #116]	; (23fdcd0 <_Z4soilv+0xec>)
+ 23fdc5a:	491e      	ldr	r1, [pc, #120]	; (23fdcd4 <_Z4soilv+0xf0>)
+ 23fdc5c:	9300      	str	r3, [sp, #0]
+ 23fdc5e:	6809      	ldr	r1, [r1, #0]
+ 23fdc60:	2300      	movs	r3, #0
+ 23fdc62:	6812      	ldr	r2, [r2, #0]
 ave_soil_val = val_accum/number_attempts;                   //  Determine average value
- 23fdd50:	6038      	str	r0, [r7, #0]
+ 23fdc64:	6038      	str	r0, [r7, #0]
 soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //  Map average value
- 23fdd52:	f000 fd8d 	bl	23fe870 <_Z3mapiiiii>
+ 23fdc66:	f000 fe03 	bl	23fe870 <_Z3mapiiiii>
 
 new_soil_level = soil_level;
- 23fdd56:	4b1b      	ldr	r3, [pc, #108]	; (23fddc4 <_Z4soilv+0xf4>)
- 23fdd58:	f8d8 2000 	ldr.w	r2, [r8]
+ 23fdc6a:	4b1b      	ldr	r3, [pc, #108]	; (23fdcd8 <_Z4soilv+0xf4>)
+ 23fdc6c:	f8d8 2000 	ldr.w	r2, [r8]
 soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //  Map average value
- 23fdd5c:	6030      	str	r0, [r6, #0]
+ 23fdc70:	6030      	str	r0, [r6, #0]
 new_soil_level = soil_level;
- 23fdd5e:	601a      	str	r2, [r3, #0]
+ 23fdc72:	601a      	str	r2, [r3, #0]
 
   Serial.print(val);                               //  DEBUG
- 23fdd60:	f001 fc58 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdc74:	f001 fcce 	bl	23ff614 <_Z16_fetch_usbserialv>
 size_t Print::print(T n, int base)
- 23fdd64:	220a      	movs	r2, #10
- 23fdd66:	f8d9 1000 	ldr.w	r1, [r9]
- 23fdd6a:	f7ff ff2f 	bl	23fdbcc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
+ 23fdc78:	220a      	movs	r2, #10
+ 23fdc7a:	f8d9 1000 	ldr.w	r1, [r9]
+ 23fdc7e:	f7ff ff9d 	bl	23fdbbc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
   Serial.println(" Single Read");                  //  DEBUG
- 23fdd6e:	f001 fc51 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fdd72:	4915      	ldr	r1, [pc, #84]	; (23fddc8 <_Z4soilv+0xf8>)
- 23fdd74:	f001 fabd 	bl	23ff2f2 <_ZN5Print7printlnEPKc>
+ 23fdc82:	f001 fcc7 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdc86:	4915      	ldr	r1, [pc, #84]	; (23fdcdc <_Z4soilv+0xf8>)
+ 23fdc88:	f001 fb33 	bl	23ff2f2 <_ZN5Print7printlnEPKc>
   Serial.print(ave_soil_val);                      //  DEBUG
- 23fdd78:	f001 fc4c 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fdd7c:	220a      	movs	r2, #10
- 23fdd7e:	6839      	ldr	r1, [r7, #0]
- 23fdd80:	f7ff ff24 	bl	23fdbcc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
+ 23fdc8c:	f001 fcc2 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdc90:	220a      	movs	r2, #10
+ 23fdc92:	6839      	ldr	r1, [r7, #0]
+ 23fdc94:	f7ff ff92 	bl	23fdbbc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
   Serial.println(" ACG");                          //  DEBUG
- 23fdd84:	f001 fc46 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fdd88:	4910      	ldr	r1, [pc, #64]	; (23fddcc <_Z4soilv+0xfc>)
- 23fdd8a:	f001 fab2 	bl	23ff2f2 <_ZN5Print7printlnEPKc>
+ 23fdc98:	f001 fcbc 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdc9c:	4910      	ldr	r1, [pc, #64]	; (23fdce0 <_Z4soilv+0xfc>)
+ 23fdc9e:	f001 fb28 	bl	23ff2f2 <_ZN5Print7printlnEPKc>
   Serial.print(soil_percentage);                   //  DEBUG
- 23fdd8e:	f001 fc41 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fdd92:	6831      	ldr	r1, [r6, #0]
- 23fdd94:	220a      	movs	r2, #10
- 23fdd96:	f7ff ff19 	bl	23fdbcc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
+ 23fdca2:	f001 fcb7 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdca6:	6831      	ldr	r1, [r6, #0]
+ 23fdca8:	220a      	movs	r2, #10
+ 23fdcaa:	f7ff ff87 	bl	23fdbbc <_ZN5Print5printIiLi0EEEjT_i.part.0.isra.0>
   Serial.println(" %");
- 23fdd9a:	f001 fc3b 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fdd9e:	490c      	ldr	r1, [pc, #48]	; (23fddd0 <_Z4soilv+0x100>)
+ 23fdcae:	f001 fcb1 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdcb2:	490c      	ldr	r1, [pc, #48]	; (23fdce4 <_Z4soilv+0x100>)
   // Serial.print("Upper Limit: ");                  //  DEBUG
   // Serial.println(water_upper);                    //  DEBUG
 
   // Serial.print("Lower Limit: ");                  //  DEBUG
   // Serial.println(water_lower);                    //  DEBUG
 }
- 23fdda0:	b003      	add	sp, #12
- 23fdda2:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 23fdcb4:	b003      	add	sp, #12
+ 23fdcb6:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
   Serial.println(" %");
- 23fdda6:	f001 baa4 	b.w	23ff2f2 <_ZN5Print7printlnEPKc>
- 23fddaa:	bf00      	nop
- 23fddac:	1007ae78 	.word	0x1007ae78
- 23fddb0:	1007ae74 	.word	0x1007ae74
- 23fddb4:	1007ad8c 	.word	0x1007ad8c
- 23fddb8:	1007ae60 	.word	0x1007ae60
- 23fddbc:	1007ad00 	.word	0x1007ad00
- 23fddc0:	1007acfc 	.word	0x1007acfc
- 23fddc4:	1007ae54 	.word	0x1007ae54
- 23fddc8:	023ffceb 	.word	0x023ffceb
- 23fddcc:	023ffcf8 	.word	0x023ffcf8
- 23fddd0:	023ffcfd 	.word	0x023ffcfd
- 23fddd4:	1007ae5c 	.word	0x1007ae5c
- 23fddd8:	1007ad04 	.word	0x1007ad04
- 23fdddc:	1007ae70 	.word	0x1007ae70
- 23fdde0:	1007ad0c 	.word	0x1007ad0c
+ 23fdcba:	f001 bb1a 	b.w	23ff2f2 <_ZN5Print7printlnEPKc>
+ 23fdcbe:	bf00      	nop
+ 23fdcc0:	1007ae78 	.word	0x1007ae78
+ 23fdcc4:	1007ae74 	.word	0x1007ae74
+ 23fdcc8:	1007ad8c 	.word	0x1007ad8c
+ 23fdccc:	1007ae60 	.word	0x1007ae60
+ 23fdcd0:	1007ad00 	.word	0x1007ad00
+ 23fdcd4:	1007acfc 	.word	0x1007acfc
+ 23fdcd8:	1007ae54 	.word	0x1007ae54
+ 23fdcdc:	023ffcdc 	.word	0x023ffcdc
+ 23fdce0:	023ffce9 	.word	0x023ffce9
+ 23fdce4:	023ffcee 	.word	0x023ffcee
+ 23fdce8:	1007ae5c 	.word	0x1007ae5c
+ 23fdcec:	1007ad04 	.word	0x1007ad04
+ 23fdcf0:	1007ae70 	.word	0x1007ae70
+ 23fdcf4:	1007ad0c 	.word	0x1007ad0c
 
-023fdde4 <_Z3U_Vv>:
+023fdcf8 <_Z3U_Vv>:
 
 void U_V() {
- 23fdde4:	b538      	push	{r3, r4, r5, lr}
+ 23fdcf8:	b538      	push	{r3, r4, r5, lr}
   
 UV = LTR390_UVS();
- 23fdde6:	f000 f97b 	bl	23fe0e0 <_Z10LTR390_UVSv>
- 23fddea:	4d19      	ldr	r5, [pc, #100]	; (23fde50 <_Z3U_Vv+0x6c>)
- 23fddec:	6028      	str	r0, [r5, #0]
+ 23fdcfa:	f000 f9f1 	bl	23fe0e0 <_Z10LTR390_UVSv>
+ 23fdcfe:	4d19      	ldr	r5, [pc, #100]	; (23fdd64 <_Z3U_Vv+0x6c>)
+ 23fdd00:	6028      	str	r0, [r5, #0]
 
 Serial.print("UV = ");                            // DEBUG
- 23fddee:	f001 fc11 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fddf2:	4918      	ldr	r1, [pc, #96]	; (23fde54 <_Z3U_Vv+0x70>)
- 23fddf4:	f001 fa6a 	bl	23ff2cc <_ZN5Print5printEPKc>
+ 23fdd02:	f001 fc87 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdd06:	4918      	ldr	r1, [pc, #96]	; (23fdd68 <_Z3U_Vv+0x70>)
+ 23fdd08:	f001 fae0 	bl	23ff2cc <_ZN5Print5printEPKc>
 Serial.println(UV);                               // DEBUG 
- 23fddf8:	f001 fc0c 	bl	23ff614 <_Z16_fetch_usbserialv>
- 23fddfc:	4604      	mov	r4, r0
+ 23fdd0c:	f001 fc82 	bl	23ff614 <_Z16_fetch_usbserialv>
+ 23fdd10:	4604      	mov	r4, r0
         return printNumber(val, base) + t;
- 23fddfe:	220a      	movs	r2, #10
- 23fde00:	6829      	ldr	r1, [r5, #0]
- 23fde02:	f001 fa80 	bl	23ff306 <_ZN5Print11printNumberEmh>
+ 23fdd12:	220a      	movs	r2, #10
+ 23fdd14:	6829      	ldr	r1, [r5, #0]
+ 23fdd16:	f001 faf6 	bl	23ff306 <_ZN5Print11printNumberEmh>
         n += println();
- 23fde06:	4620      	mov	r0, r4
- 23fde08:	f001 fa67 	bl	23ff2da <_ZN5Print7printlnEv>
+ 23fdd1a:	4620      	mov	r0, r4
+ 23fdd1c:	f001 fadd 	bl	23ff2da <_ZN5Print7printlnEv>
 DEV_Delay_ms(500);
- 23fde0c:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
- 23fde10:	f000 f91c 	bl	23fe04c <_Z12DEV_Delay_msm>
+ 23fdd20:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 23fdd24:	f000 f992 	bl	23fe04c <_Z12DEV_Delay_msm>
 
 switch (sun_light_level) {
- 23fde14:	4b10      	ldr	r3, [pc, #64]	; (23fde58 <_Z3U_Vv+0x74>)
- 23fde16:	4911      	ldr	r1, [pc, #68]	; (23fde5c <_Z3U_Vv+0x78>)
- 23fde18:	681b      	ldr	r3, [r3, #0]
- 23fde1a:	4a11      	ldr	r2, [pc, #68]	; (23fde60 <_Z3U_Vv+0x7c>)
- 23fde1c:	2b03      	cmp	r3, #3
- 23fde1e:	dc04      	bgt.n	23fde2a <_Z3U_Vv+0x46>
- 23fde20:	2b01      	cmp	r3, #1
- 23fde22:	dc11      	bgt.n	23fde48 <_Z3U_Vv+0x64>
- 23fde24:	b12b      	cbz	r3, 23fde32 <_Z3U_Vv+0x4e>
- 23fde26:	2b01      	cmp	r3, #1
- 23fde28:	d008      	beq.n	23fde3c <_Z3U_Vv+0x58>
+ 23fdd28:	4b10      	ldr	r3, [pc, #64]	; (23fdd6c <_Z3U_Vv+0x74>)
+ 23fdd2a:	4911      	ldr	r1, [pc, #68]	; (23fdd70 <_Z3U_Vv+0x78>)
+ 23fdd2c:	681b      	ldr	r3, [r3, #0]
+ 23fdd2e:	4a11      	ldr	r2, [pc, #68]	; (23fdd74 <_Z3U_Vv+0x7c>)
+ 23fdd30:	2b03      	cmp	r3, #3
+ 23fdd32:	dc04      	bgt.n	23fdd3e <_Z3U_Vv+0x46>
+ 23fdd34:	2b01      	cmp	r3, #1
+ 23fdd36:	dc11      	bgt.n	23fdd5c <_Z3U_Vv+0x64>
+ 23fdd38:	b12b      	cbz	r3, 23fdd46 <_Z3U_Vv+0x4e>
+ 23fdd3a:	2b01      	cmp	r3, #1
+ 23fdd3c:	d008      	beq.n	23fdd50 <_Z3U_Vv+0x58>
     sun_upper = 1;      // Indoor Plants 
     sun_lower = 0;
     break;
 
   default:
     sun_upper = 0;
- 23fde2a:	2000      	movs	r0, #0
- 23fde2c:	6008      	str	r0, [r1, #0]
+ 23fdd3e:	2000      	movs	r0, #0
+ 23fdd40:	6008      	str	r0, [r1, #0]
     sun_lower = 0;
- 23fde2e:	6010      	str	r0, [r2, #0]
+ 23fdd42:	6010      	str	r0, [r2, #0]
     break;
- 23fde30:	e007      	b.n	23fde42 <_Z3U_Vv+0x5e>
+ 23fdd44:	e007      	b.n	23fdd56 <_Z3U_Vv+0x5e>
     sun_upper = 6;
- 23fde32:	2006      	movs	r0, #6
- 23fde34:	6008      	str	r0, [r1, #0]
+ 23fdd46:	2006      	movs	r0, #6
+ 23fdd48:	6008      	str	r0, [r1, #0]
     sun_lower = 2;
- 23fde36:	2102      	movs	r1, #2
+ 23fdd4a:	2102      	movs	r1, #2
     sun_lower = 0;
- 23fde38:	6011      	str	r1, [r2, #0]
+ 23fdd4c:	6011      	str	r1, [r2, #0]
     break;
- 23fde3a:	e002      	b.n	23fde42 <_Z3U_Vv+0x5e>
+ 23fdd4e:	e002      	b.n	23fdd56 <_Z3U_Vv+0x5e>
     sun_upper = 2;       // Plants that require partial sun
- 23fde3c:	2002      	movs	r0, #2
+ 23fdd50:	2002      	movs	r0, #2
     sun_lower = 1;
- 23fde3e:	6013      	str	r3, [r2, #0]
+ 23fdd52:	6013      	str	r3, [r2, #0]
     sun_upper = 2;       // Plants that require partial sun
- 23fde40:	6008      	str	r0, [r1, #0]
+ 23fdd54:	6008      	str	r0, [r1, #0]
   }
 
 new_sun_light_level = sun_light_level;
- 23fde42:	4a08      	ldr	r2, [pc, #32]	; (23fde64 <_Z3U_Vv+0x80>)
- 23fde44:	6013      	str	r3, [r2, #0]
+ 23fdd56:	4a08      	ldr	r2, [pc, #32]	; (23fdd78 <_Z3U_Vv+0x80>)
+ 23fdd58:	6013      	str	r3, [r2, #0]
 // Serial.print("UV Lower Limit: ");            //  DEBUG
 // Serial.println(sun_lower);                   //  DEBUG
 
   // if(digitalRead(8) == 1){                //  Triggers interrupt if cindiction is met
   //   Serial.println("INT");
 }
- 23fde46:	bd38      	pop	{r3, r4, r5, pc}
+ 23fdd5a:	bd38      	pop	{r3, r4, r5, pc}
     sun_upper = 1;      // Plants that require full shade
- 23fde48:	2001      	movs	r0, #1
- 23fde4a:	6008      	str	r0, [r1, #0]
+ 23fdd5c:	2001      	movs	r0, #1
+ 23fdd5e:	6008      	str	r0, [r1, #0]
     sun_lower = 0;
- 23fde4c:	2100      	movs	r1, #0
- 23fde4e:	e7f3      	b.n	23fde38 <_Z3U_Vv+0x54>
- 23fde50:	1007ad80 	.word	0x1007ad80
- 23fde54:	023ffd00 	.word	0x023ffd00
- 23fde58:	1007ae64 	.word	0x1007ae64
- 23fde5c:	1007ae6c 	.word	0x1007ae6c
- 23fde60:	1007ae68 	.word	0x1007ae68
- 23fde64:	1007ae58 	.word	0x1007ae58
+ 23fdd60:	2100      	movs	r1, #0
+ 23fdd62:	e7f3      	b.n	23fdd4c <_Z3U_Vv+0x54>
+ 23fdd64:	1007ad80 	.word	0x1007ad80
+ 23fdd68:	023ffcf1 	.word	0x023ffcf1
+ 23fdd6c:	1007ae64 	.word	0x1007ae64
+ 23fdd70:	1007ae6c 	.word	0x1007ae6c
+ 23fdd74:	1007ae68 	.word	0x1007ae68
+ 23fdd78:	1007ae58 	.word	0x1007ae58
 
-023fde68 <_Z12Error_statesv>:
+023fdd7c <_Z12Error_statesv>:
 
 void Error_states () {
- 23fde68:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 23fdd7c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
 
 if ((UV > sun_upper) || (UV < sun_lower)) {
- 23fde6a:	4a23      	ldr	r2, [pc, #140]	; (23fdef8 <_Z12Error_statesv+0x90>)
- 23fde6c:	4b23      	ldr	r3, [pc, #140]	; (23fdefc <_Z12Error_statesv+0x94>)
- 23fde6e:	6812      	ldr	r2, [r2, #0]
- 23fde70:	681b      	ldr	r3, [r3, #0]
- 23fde72:	4293      	cmp	r3, r2
- 23fde74:	d820      	bhi.n	23fdeb8 <_Z12Error_statesv+0x50>
- 23fde76:	4a22      	ldr	r2, [pc, #136]	; (23fdf00 <_Z12Error_statesv+0x98>)
- 23fde78:	6812      	ldr	r2, [r2, #0]
- 23fde7a:	4293      	cmp	r3, r2
- 23fde7c:	bf2c      	ite	cs
- 23fde7e:	2300      	movcs	r3, #0
- 23fde80:	2301      	movcc	r3, #1
- 23fde82:	4a20      	ldr	r2, [pc, #128]	; (23fdf04 <_Z12Error_statesv+0x9c>)
- 23fde84:	4f20      	ldr	r7, [pc, #128]	; (23fdf08 <_Z12Error_statesv+0xa0>)
- 23fde86:	6013      	str	r3, [r2, #0]
+ 23fdd7e:	4a23      	ldr	r2, [pc, #140]	; (23fde0c <_Z12Error_statesv+0x90>)
+ 23fdd80:	4b23      	ldr	r3, [pc, #140]	; (23fde10 <_Z12Error_statesv+0x94>)
+ 23fdd82:	6812      	ldr	r2, [r2, #0]
+ 23fdd84:	681b      	ldr	r3, [r3, #0]
+ 23fdd86:	4293      	cmp	r3, r2
+ 23fdd88:	d820      	bhi.n	23fddcc <_Z12Error_statesv+0x50>
+ 23fdd8a:	4a22      	ldr	r2, [pc, #136]	; (23fde14 <_Z12Error_statesv+0x98>)
+ 23fdd8c:	6812      	ldr	r2, [r2, #0]
+ 23fdd8e:	4293      	cmp	r3, r2
+ 23fdd90:	bf2c      	ite	cs
+ 23fdd92:	2300      	movcs	r3, #0
+ 23fdd94:	2301      	movcc	r3, #1
+ 23fdd96:	4a20      	ldr	r2, [pc, #128]	; (23fde18 <_Z12Error_statesv+0x9c>)
+ 23fdd98:	4f20      	ldr	r7, [pc, #128]	; (23fde1c <_Z12Error_statesv+0xa0>)
+ 23fdd9a:	6013      	str	r3, [r2, #0]
   UV_Error = 1;
     } else {
       UV_Error = 0;
     }
 
 if (soil_percentage < water_lower) {
- 23fde88:	4b20      	ldr	r3, [pc, #128]	; (23fdf0c <_Z12Error_statesv+0xa4>)
- 23fde8a:	4a21      	ldr	r2, [pc, #132]	; (23fdf10 <_Z12Error_statesv+0xa8>)
- 23fde8c:	681b      	ldr	r3, [r3, #0]
- 23fde8e:	6812      	ldr	r2, [r2, #0]
- 23fde90:	4e20      	ldr	r6, [pc, #128]	; (23fdf14 <_Z12Error_statesv+0xac>)
- 23fde92:	4293      	cmp	r3, r2
- 23fde94:	4d20      	ldr	r5, [pc, #128]	; (23fdf18 <_Z12Error_statesv+0xb0>)
- 23fde96:	4c21      	ldr	r4, [pc, #132]	; (23fdf1c <_Z12Error_statesv+0xb4>)
- 23fde98:	da10      	bge.n	23fdebc <_Z12Error_statesv+0x54>
+ 23fdd9c:	4b20      	ldr	r3, [pc, #128]	; (23fde20 <_Z12Error_statesv+0xa4>)
+ 23fdd9e:	4a21      	ldr	r2, [pc, #132]	; (23fde24 <_Z12Error_statesv+0xa8>)
+ 23fdda0:	681b      	ldr	r3, [r3, #0]
+ 23fdda2:	6812      	ldr	r2, [r2, #0]
+ 23fdda4:	4e20      	ldr	r6, [pc, #128]	; (23fde28 <_Z12Error_statesv+0xac>)
+ 23fdda6:	4293      	cmp	r3, r2
+ 23fdda8:	4d20      	ldr	r5, [pc, #128]	; (23fde2c <_Z12Error_statesv+0xb0>)
+ 23fddaa:	4c21      	ldr	r4, [pc, #132]	; (23fde30 <_Z12Error_statesv+0xb4>)
+ 23fddac:	da10      	bge.n	23fddd0 <_Z12Error_statesv+0x54>
     digitalWrite (red_pin, LOW);                  // Red indicator when plant requires watering
- 23fde9a:	2100      	movs	r1, #0
- 23fde9c:	8838      	ldrh	r0, [r7, #0]
- 23fde9e:	f001 fd12 	bl	23ff8c6 <digitalWrite>
+ 23fddae:	2100      	movs	r1, #0
+ 23fddb0:	8838      	ldrh	r0, [r7, #0]
+ 23fddb2:	f001 fd88 	bl	23ff8c6 <digitalWrite>
     digitalWrite (blue_pin, HIGH);
- 23fdea2:	2101      	movs	r1, #1
- 23fdea4:	8830      	ldrh	r0, [r6, #0]
- 23fdea6:	f001 fd0e 	bl	23ff8c6 <digitalWrite>
+ 23fddb6:	2101      	movs	r1, #1
+ 23fddb8:	8830      	ldrh	r0, [r6, #0]
+ 23fddba:	f001 fd84 	bl	23ff8c6 <digitalWrite>
     digitalWrite (green_pin, HIGH);
- 23fdeaa:	2101      	movs	r1, #1
- 23fdeac:	8828      	ldrh	r0, [r5, #0]
+ 23fddbe:	2101      	movs	r1, #1
+ 23fddc0:	8828      	ldrh	r0, [r5, #0]
     H2O_Error = 1;
 
       } else if (soil_percentage > water_upper) {
         digitalWrite (blue_pin, LOW);             // Blue indicator when plant is overwatered
         digitalWrite (green_pin, HIGH);
         digitalWrite (red_pin, HIGH);
- 23fdeae:	f001 fd0a 	bl	23ff8c6 <digitalWrite>
+ 23fddc2:	f001 fd80 	bl	23ff8c6 <digitalWrite>
         H2O_Error = 1;
- 23fdeb2:	2301      	movs	r3, #1
+ 23fddc6:	2301      	movs	r3, #1
 
       } else {
         digitalWrite (red_pin, HIGH);
         digitalWrite (blue_pin, HIGH);
         digitalWrite (green_pin, LOW);
         H2O_Error = 0;
- 23fdeb4:	6023      	str	r3, [r4, #0]
+ 23fddc8:	6023      	str	r3, [r4, #0]
       }
 }
- 23fdeb6:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+ 23fddca:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
   UV_Error = 1;
- 23fdeb8:	2301      	movs	r3, #1
- 23fdeba:	e7e2      	b.n	23fde82 <_Z12Error_statesv+0x1a>
+ 23fddcc:	2301      	movs	r3, #1
+ 23fddce:	e7e2      	b.n	23fdd96 <_Z12Error_statesv+0x1a>
       } else if (soil_percentage > water_upper) {
- 23fdebc:	4a18      	ldr	r2, [pc, #96]	; (23fdf20 <_Z12Error_statesv+0xb8>)
- 23fdebe:	6812      	ldr	r2, [r2, #0]
- 23fdec0:	4293      	cmp	r3, r2
- 23fdec2:	dd0a      	ble.n	23fdeda <_Z12Error_statesv+0x72>
+ 23fddd0:	4a18      	ldr	r2, [pc, #96]	; (23fde34 <_Z12Error_statesv+0xb8>)
+ 23fddd2:	6812      	ldr	r2, [r2, #0]
+ 23fddd4:	4293      	cmp	r3, r2
+ 23fddd6:	dd0a      	ble.n	23fddee <_Z12Error_statesv+0x72>
         digitalWrite (blue_pin, LOW);             // Blue indicator when plant is overwatered
- 23fdec4:	2100      	movs	r1, #0
- 23fdec6:	8830      	ldrh	r0, [r6, #0]
- 23fdec8:	f001 fcfd 	bl	23ff8c6 <digitalWrite>
+ 23fddd8:	2100      	movs	r1, #0
+ 23fddda:	8830      	ldrh	r0, [r6, #0]
+ 23fdddc:	f001 fd73 	bl	23ff8c6 <digitalWrite>
         digitalWrite (green_pin, HIGH);
- 23fdecc:	2101      	movs	r1, #1
- 23fdece:	8828      	ldrh	r0, [r5, #0]
- 23fded0:	f001 fcf9 	bl	23ff8c6 <digitalWrite>
+ 23fdde0:	2101      	movs	r1, #1
+ 23fdde2:	8828      	ldrh	r0, [r5, #0]
+ 23fdde4:	f001 fd6f 	bl	23ff8c6 <digitalWrite>
         digitalWrite (red_pin, HIGH);
- 23fded4:	2101      	movs	r1, #1
- 23fded6:	8838      	ldrh	r0, [r7, #0]
- 23fded8:	e7e9      	b.n	23fdeae <_Z12Error_statesv+0x46>
+ 23fdde8:	2101      	movs	r1, #1
+ 23fddea:	8838      	ldrh	r0, [r7, #0]
+ 23fddec:	e7e9      	b.n	23fddc2 <_Z12Error_statesv+0x46>
         digitalWrite (red_pin, HIGH);
- 23fdeda:	2101      	movs	r1, #1
- 23fdedc:	8838      	ldrh	r0, [r7, #0]
- 23fdede:	f001 fcf2 	bl	23ff8c6 <digitalWrite>
+ 23fddee:	2101      	movs	r1, #1
+ 23fddf0:	8838      	ldrh	r0, [r7, #0]
+ 23fddf2:	f001 fd68 	bl	23ff8c6 <digitalWrite>
         digitalWrite (blue_pin, HIGH);
- 23fdee2:	2101      	movs	r1, #1
- 23fdee4:	8830      	ldrh	r0, [r6, #0]
- 23fdee6:	f001 fcee 	bl	23ff8c6 <digitalWrite>
+ 23fddf6:	2101      	movs	r1, #1
+ 23fddf8:	8830      	ldrh	r0, [r6, #0]
+ 23fddfa:	f001 fd64 	bl	23ff8c6 <digitalWrite>
         digitalWrite (green_pin, LOW);
- 23fdeea:	2100      	movs	r1, #0
- 23fdeec:	8828      	ldrh	r0, [r5, #0]
- 23fdeee:	f001 fcea 	bl	23ff8c6 <digitalWrite>
+ 23fddfe:	2100      	movs	r1, #0
+ 23fde00:	8828      	ldrh	r0, [r5, #0]
+ 23fde02:	f001 fd60 	bl	23ff8c6 <digitalWrite>
         H2O_Error = 0;
- 23fdef2:	2300      	movs	r3, #0
- 23fdef4:	e7de      	b.n	23fdeb4 <_Z12Error_statesv+0x4c>
- 23fdef6:	bf00      	nop
- 23fdef8:	1007ae6c 	.word	0x1007ae6c
- 23fdefc:	1007ad80 	.word	0x1007ad80
- 23fdf00:	1007ae68 	.word	0x1007ae68
- 23fdf04:	1007ad84 	.word	0x1007ad84
- 23fdf08:	1007ad08 	.word	0x1007ad08
- 23fdf0c:	1007ae60 	.word	0x1007ae60
- 23fdf10:	1007ae74 	.word	0x1007ae74
- 23fdf14:	1007acf4 	.word	0x1007acf4
- 23fdf18:	1007acf8 	.word	0x1007acf8
- 23fdf1c:	1007ad7c 	.word	0x1007ad7c
- 23fdf20:	1007ae78 	.word	0x1007ae78
+ 23fde06:	2300      	movs	r3, #0
+ 23fde08:	e7de      	b.n	23fddc8 <_Z12Error_statesv+0x4c>
+ 23fde0a:	bf00      	nop
+ 23fde0c:	1007ae6c 	.word	0x1007ae6c
+ 23fde10:	1007ad80 	.word	0x1007ad80
+ 23fde14:	1007ae68 	.word	0x1007ae68
+ 23fde18:	1007ad84 	.word	0x1007ad84
+ 23fde1c:	1007ad08 	.word	0x1007ad08
+ 23fde20:	1007ae60 	.word	0x1007ae60
+ 23fde24:	1007ae74 	.word	0x1007ae74
+ 23fde28:	1007acf4 	.word	0x1007acf4
+ 23fde2c:	1007acf8 	.word	0x1007acf8
+ 23fde30:	1007ad7c 	.word	0x1007ad7c
+ 23fde34:	1007ae78 	.word	0x1007ae78
 
-023fdf24 <_Z7publishv>:
+023fde38 <_Z7publishv>:
 
 
 void publish () {
- 23fdf24:	b510      	push	{r4, lr}
+ 23fde38:	b510      	push	{r4, lr}
     
     snprintf(data, sizeof(data) 
- 23fdf26:	4b1e      	ldr	r3, [pc, #120]	; (23fdfa0 <_Z7publishv+0x7c>)
+ 23fde3a:	4b1e      	ldr	r3, [pc, #120]	; (23fdeb4 <_Z7publishv+0x7c>)
 void publish () {
- 23fdf28:	b08a      	sub	sp, #40	; 0x28
+ 23fde3c:	b08a      	sub	sp, #40	; 0x28
     snprintf(data, sizeof(data) 
- 23fdf2a:	681b      	ldr	r3, [r3, #0]
- 23fdf2c:	21c0      	movs	r1, #192	; 0xc0
- 23fdf2e:	9307      	str	r3, [sp, #28]
- 23fdf30:	4b1c      	ldr	r3, [pc, #112]	; (23fdfa4 <_Z7publishv+0x80>)
- 23fdf32:	4a1d      	ldr	r2, [pc, #116]	; (23fdfa8 <_Z7publishv+0x84>)
- 23fdf34:	681b      	ldr	r3, [r3, #0]
- 23fdf36:	481d      	ldr	r0, [pc, #116]	; (23fdfac <_Z7publishv+0x88>)
- 23fdf38:	9306      	str	r3, [sp, #24]
- 23fdf3a:	4b1d      	ldr	r3, [pc, #116]	; (23fdfb0 <_Z7publishv+0x8c>)
- 23fdf3c:	681b      	ldr	r3, [r3, #0]
- 23fdf3e:	9305      	str	r3, [sp, #20]
- 23fdf40:	4b1c      	ldr	r3, [pc, #112]	; (23fdfb4 <_Z7publishv+0x90>)
- 23fdf42:	681b      	ldr	r3, [r3, #0]
- 23fdf44:	9304      	str	r3, [sp, #16]
- 23fdf46:	4b1c      	ldr	r3, [pc, #112]	; (23fdfb8 <_Z7publishv+0x94>)
- 23fdf48:	681b      	ldr	r3, [r3, #0]
- 23fdf4a:	9303      	str	r3, [sp, #12]
- 23fdf4c:	4b1b      	ldr	r3, [pc, #108]	; (23fdfbc <_Z7publishv+0x98>)
- 23fdf4e:	681b      	ldr	r3, [r3, #0]
- 23fdf50:	9302      	str	r3, [sp, #8]
- 23fdf52:	4b1b      	ldr	r3, [pc, #108]	; (23fdfc0 <_Z7publishv+0x9c>)
- 23fdf54:	681b      	ldr	r3, [r3, #0]
- 23fdf56:	9301      	str	r3, [sp, #4]
- 23fdf58:	4b1a      	ldr	r3, [pc, #104]	; (23fdfc4 <_Z7publishv+0xa0>)
- 23fdf5a:	681b      	ldr	r3, [r3, #0]
- 23fdf5c:	9300      	str	r3, [sp, #0]
- 23fdf5e:	4b1a      	ldr	r3, [pc, #104]	; (23fdfc8 <_Z7publishv+0xa4>)
- 23fdf60:	f000 fc40 	bl	23fe7e4 <snprintf>
+ 23fde3e:	681b      	ldr	r3, [r3, #0]
+ 23fde40:	21c0      	movs	r1, #192	; 0xc0
+ 23fde42:	9307      	str	r3, [sp, #28]
+ 23fde44:	4b1c      	ldr	r3, [pc, #112]	; (23fdeb8 <_Z7publishv+0x80>)
+ 23fde46:	4a1d      	ldr	r2, [pc, #116]	; (23fdebc <_Z7publishv+0x84>)
+ 23fde48:	681b      	ldr	r3, [r3, #0]
+ 23fde4a:	481d      	ldr	r0, [pc, #116]	; (23fdec0 <_Z7publishv+0x88>)
+ 23fde4c:	9306      	str	r3, [sp, #24]
+ 23fde4e:	4b1d      	ldr	r3, [pc, #116]	; (23fdec4 <_Z7publishv+0x8c>)
+ 23fde50:	681b      	ldr	r3, [r3, #0]
+ 23fde52:	9305      	str	r3, [sp, #20]
+ 23fde54:	4b1c      	ldr	r3, [pc, #112]	; (23fdec8 <_Z7publishv+0x90>)
+ 23fde56:	681b      	ldr	r3, [r3, #0]
+ 23fde58:	9304      	str	r3, [sp, #16]
+ 23fde5a:	4b1c      	ldr	r3, [pc, #112]	; (23fdecc <_Z7publishv+0x94>)
+ 23fde5c:	681b      	ldr	r3, [r3, #0]
+ 23fde5e:	9303      	str	r3, [sp, #12]
+ 23fde60:	4b1b      	ldr	r3, [pc, #108]	; (23fded0 <_Z7publishv+0x98>)
+ 23fde62:	681b      	ldr	r3, [r3, #0]
+ 23fde64:	9302      	str	r3, [sp, #8]
+ 23fde66:	4b1b      	ldr	r3, [pc, #108]	; (23fded4 <_Z7publishv+0x9c>)
+ 23fde68:	681b      	ldr	r3, [r3, #0]
+ 23fde6a:	9301      	str	r3, [sp, #4]
+ 23fde6c:	4b1a      	ldr	r3, [pc, #104]	; (23fded8 <_Z7publishv+0xa0>)
+ 23fde6e:	681b      	ldr	r3, [r3, #0]
+ 23fde70:	9300      	str	r3, [sp, #0]
+ 23fde72:	4b1a      	ldr	r3, [pc, #104]	; (23fdedc <_Z7publishv+0xa4>)
+ 23fde74:	f000 fcb6 	bl	23fe7e4 <snprintf>
 inline particle::Flags<TagT, ValueT>::Flags(Flag<TagT, ValueT> flag) :
         val_(flag.value()) {
 }
 
 template<typename TagT, typename ValueT>
 inline particle::Flags<TagT, ValueT>::Flags(ValueT val) :
- 23fdf64:	4b19      	ldr	r3, [pc, #100]	; (23fdfcc <_Z7publishv+0xa8>)
+ 23fde78:	4b19      	ldr	r3, [pc, #100]	; (23fdee0 <_Z7publishv+0xa8>)
         return publish(eventName, eventData, DEFAULT_CLOUD_EVENT_TTL, flags1, flags2);
     }
 
     inline particle::Future<bool> publish(const char *eventName, const char *eventData, int ttl, PublishFlags flags1, PublishFlags flags2 = PublishFlags())
     {
         return publish_event(eventName, eventData, ttl, flags1 | flags2);
- 23fdf66:	4a11      	ldr	r2, [pc, #68]	; (23fdfac <_Z7publishv+0x88>)
- 23fdf68:	781b      	ldrb	r3, [r3, #0]
- 23fdf6a:	4919      	ldr	r1, [pc, #100]	; (23fdfd0 <_Z7publishv+0xac>)
- 23fdf6c:	f88d 3000 	strb.w	r3, [sp]
- 23fdf70:	a808      	add	r0, sp, #32
- 23fdf72:	233c      	movs	r3, #60	; 0x3c
- 23fdf74:	f000 fe2a 	bl	23febcc <_ZN10CloudClass13publish_eventEPKcS1_iN8particle5FlagsI15PublishFlagTypehEE>
+ 23fde7a:	4a11      	ldr	r2, [pc, #68]	; (23fdec0 <_Z7publishv+0x88>)
+ 23fde7c:	781b      	ldrb	r3, [r3, #0]
+ 23fde7e:	4919      	ldr	r1, [pc, #100]	; (23fdee4 <_Z7publishv+0xac>)
+ 23fde80:	f88d 3000 	strb.w	r3, [sp]
+ 23fde84:	a808      	add	r0, sp, #32
+ 23fde86:	233c      	movs	r3, #60	; 0x3c
+ 23fde88:	f000 fea0 	bl	23febcc <_ZN10CloudClass13publish_eventEPKcS1_iN8particle5FlagsI15PublishFlagTypehEE>
       // Does not throw if __r._M_get_use_count() == 0, caller must check.
       explicit __shared_count(const __weak_count<_Lp>& __r, std::nothrow_t);
 
       ~__shared_count() noexcept
       {
 	if (_M_pi != nullptr)
- 23fdf78:	9c09      	ldr	r4, [sp, #36]	; 0x24
- 23fdf7a:	b17c      	cbz	r4, 23fdf9c <_Z7publishv+0x78>
+ 23fde8c:	9c09      	ldr	r4, [sp, #36]	; 0x24
+ 23fde8e:	b17c      	cbz	r4, 23fdeb0 <_Z7publishv+0x78>
       if (--_M_use_count == 0)
- 23fdf7c:	6863      	ldr	r3, [r4, #4]
- 23fdf7e:	3b01      	subs	r3, #1
- 23fdf80:	6063      	str	r3, [r4, #4]
- 23fdf82:	b95b      	cbnz	r3, 23fdf9c <_Z7publishv+0x78>
+ 23fde90:	6863      	ldr	r3, [r4, #4]
+ 23fde92:	3b01      	subs	r3, #1
+ 23fde94:	6063      	str	r3, [r4, #4]
+ 23fde96:	b95b      	cbnz	r3, 23fdeb0 <_Z7publishv+0x78>
           _M_dispose();
- 23fdf84:	6823      	ldr	r3, [r4, #0]
- 23fdf86:	4620      	mov	r0, r4
- 23fdf88:	689b      	ldr	r3, [r3, #8]
- 23fdf8a:	4798      	blx	r3
+ 23fde98:	6823      	ldr	r3, [r4, #0]
+ 23fde9a:	4620      	mov	r0, r4
+ 23fde9c:	689b      	ldr	r3, [r3, #8]
+ 23fde9e:	4798      	blx	r3
           if (--_M_weak_count == 0)
- 23fdf8c:	68a3      	ldr	r3, [r4, #8]
- 23fdf8e:	3b01      	subs	r3, #1
- 23fdf90:	60a3      	str	r3, [r4, #8]
- 23fdf92:	b91b      	cbnz	r3, 23fdf9c <_Z7publishv+0x78>
+ 23fdea0:	68a3      	ldr	r3, [r4, #8]
+ 23fdea2:	3b01      	subs	r3, #1
+ 23fdea4:	60a3      	str	r3, [r4, #8]
+ 23fdea6:	b91b      	cbnz	r3, 23fdeb0 <_Z7publishv+0x78>
             _M_destroy();
- 23fdf94:	6823      	ldr	r3, [r4, #0]
- 23fdf96:	4620      	mov	r0, r4
- 23fdf98:	68db      	ldr	r3, [r3, #12]
- 23fdf9a:	4798      	blx	r3
+ 23fdea8:	6823      	ldr	r3, [r4, #0]
+ 23fdeaa:	4620      	mov	r0, r4
+ 23fdeac:	68db      	ldr	r3, [r3, #12]
+ 23fdeae:	4798      	blx	r3
         , "{\"t\":\"%s\",\"new_sun_light_level\":%i,\"new_soil_level\":%i,\"sun_upper\":%i,\"sun_lower\":%i,\"water_upper\":%i,\"water_lower\":%i,\"H2O_Error\":%i,\"UV_Error\":%i}"
         , BLYNK_AUTH_TOKEN, UV,soil_percentage,sun_upper,sun_lower,water_upper,water_lower,H2O_Error,UV_Error
         );  
         
         Particle.publish("Send_smartpot_data", data, PRIVATE);
 }
- 23fdf9c:	b00a      	add	sp, #40	; 0x28
- 23fdf9e:	bd10      	pop	{r4, pc}
- 23fdfa0:	1007ad84 	.word	0x1007ad84
- 23fdfa4:	1007ad7c 	.word	0x1007ad7c
- 23fdfa8:	023ffd27 	.word	0x023ffd27
- 23fdfac:	1007ad90 	.word	0x1007ad90
- 23fdfb0:	1007ae74 	.word	0x1007ae74
- 23fdfb4:	1007ae78 	.word	0x1007ae78
- 23fdfb8:	1007ae68 	.word	0x1007ae68
- 23fdfbc:	1007ae6c 	.word	0x1007ae6c
- 23fdfc0:	1007ae60 	.word	0x1007ae60
- 23fdfc4:	1007ad80 	.word	0x1007ad80
- 23fdfc8:	023ffd06 	.word	0x023ffd06
- 23fdfcc:	1007ad88 	.word	0x1007ad88
- 23fdfd0:	023ffdbc 	.word	0x023ffdbc
+ 23fdeb0:	b00a      	add	sp, #40	; 0x28
+ 23fdeb2:	bd10      	pop	{r4, pc}
+ 23fdeb4:	1007ad84 	.word	0x1007ad84
+ 23fdeb8:	1007ad7c 	.word	0x1007ad7c
+ 23fdebc:	023ffd18 	.word	0x023ffd18
+ 23fdec0:	1007ad90 	.word	0x1007ad90
+ 23fdec4:	1007ae74 	.word	0x1007ae74
+ 23fdec8:	1007ae78 	.word	0x1007ae78
+ 23fdecc:	1007ae68 	.word	0x1007ae68
+ 23fded0:	1007ae6c 	.word	0x1007ae6c
+ 23fded4:	1007ae60 	.word	0x1007ae60
+ 23fded8:	1007ad80 	.word	0x1007ad80
+ 23fdedc:	023ffcf7 	.word	0x023ffcf7
+ 23fdee0:	1007ad88 	.word	0x1007ad88
+ 23fdee4:	023ffdad 	.word	0x023ffdad
+
+023fdee8 <setup>:
+void setup() {
+ 23fdee8:	b570      	push	{r4, r5, r6, lr}
+        return register_function(call_raw_user_function, (void*)func, funcKey);
+ 23fdeea:	4c31      	ldr	r4, [pc, #196]	; (23fdfb0 <setup+0xc8>)
+  pinMode(red_pin, OUTPUT);
+ 23fdeec:	4e31      	ldr	r6, [pc, #196]	; (23fdfb4 <setup+0xcc>)
+ 23fdeee:	4620      	mov	r0, r4
+ 23fdef0:	4a31      	ldr	r2, [pc, #196]	; (23fdfb8 <setup+0xd0>)
+ 23fdef2:	4932      	ldr	r1, [pc, #200]	; (23fdfbc <setup+0xd4>)
+ 23fdef4:	f000 fd77 	bl	23fe9e6 <_ZN10CloudClass17register_functionEPFiPvPKcS0_ES0_S2_>
+  pinMode(green_pin, OUTPUT);
+ 23fdef8:	4d31      	ldr	r5, [pc, #196]	; (23fdfc0 <setup+0xd8>)
+ 23fdefa:	4a32      	ldr	r2, [pc, #200]	; (23fdfc4 <setup+0xdc>)
+ 23fdefc:	4620      	mov	r0, r4
+ 23fdefe:	4932      	ldr	r1, [pc, #200]	; (23fdfc8 <setup+0xe0>)
+ 23fdf00:	f000 fd71 	bl	23fe9e6 <_ZN10CloudClass17register_functionEPFiPvPKcS0_ES0_S2_>
+  pinMode(blue_pin, OUTPUT);
+ 23fdf04:	4c31      	ldr	r4, [pc, #196]	; (23fdfcc <setup+0xe4>)
+  pinMode(red_pin, OUTPUT);
+ 23fdf06:	8830      	ldrh	r0, [r6, #0]
+ 23fdf08:	2101      	movs	r1, #1
+ 23fdf0a:	f001 fccb 	bl	23ff8a4 <pinMode>
+  pinMode(green_pin, OUTPUT);
+ 23fdf0e:	8828      	ldrh	r0, [r5, #0]
+ 23fdf10:	2101      	movs	r1, #1
+ 23fdf12:	f001 fcc7 	bl	23ff8a4 <pinMode>
+  pinMode(blue_pin, OUTPUT);
+ 23fdf16:	8820      	ldrh	r0, [r4, #0]
+ 23fdf18:	2101      	movs	r1, #1
+ 23fdf1a:	f001 fcc3 	bl	23ff8a4 <pinMode>
+  pinMode(soil_pin, INPUT);
+ 23fdf1e:	4b2c      	ldr	r3, [pc, #176]	; (23fdfd0 <setup+0xe8>)
+ 23fdf20:	2100      	movs	r1, #0
+ 23fdf22:	8818      	ldrh	r0, [r3, #0]
+ 23fdf24:	f001 fcbe 	bl	23ff8a4 <pinMode>
+  delay(500);
+ 23fdf28:	f44f 70fa 	mov.w	r0, #500	; 0x1f4
+ 23fdf2c:	f000 fcac 	bl	23fe888 <delay>
+  digitalWrite (red_pin, HIGH);
+ 23fdf30:	8830      	ldrh	r0, [r6, #0]
+ 23fdf32:	2101      	movs	r1, #1
+ 23fdf34:	f001 fcc7 	bl	23ff8c6 <digitalWrite>
+  digitalWrite (green_pin, HIGH);
+ 23fdf38:	8828      	ldrh	r0, [r5, #0]
+ 23fdf3a:	2101      	movs	r1, #1
+ 23fdf3c:	f001 fcc3 	bl	23ff8c6 <digitalWrite>
+  digitalWrite (blue_pin, HIGH);
+ 23fdf40:	2101      	movs	r1, #1
+ 23fdf42:	8820      	ldrh	r0, [r4, #0]
+ 23fdf44:	f001 fcbf 	bl	23ff8c6 <digitalWrite>
+  delay(100);
+ 23fdf48:	2064      	movs	r0, #100	; 0x64
+ 23fdf4a:	f000 fc9d 	bl	23fe888 <delay>
+ digitalWrite (red_pin, LOW);
+ 23fdf4e:	2100      	movs	r1, #0
+ 23fdf50:	8830      	ldrh	r0, [r6, #0]
+ 23fdf52:	f001 fcb8 	bl	23ff8c6 <digitalWrite>
+ delay(1000);
+ 23fdf56:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 23fdf5a:	f000 fc95 	bl	23fe888 <delay>
+ digitalWrite (red_pin, HIGH);
+ 23fdf5e:	8830      	ldrh	r0, [r6, #0]
+ 23fdf60:	2101      	movs	r1, #1
+ 23fdf62:	f001 fcb0 	bl	23ff8c6 <digitalWrite>
+ digitalWrite (green_pin, LOW);
+ 23fdf66:	2100      	movs	r1, #0
+ 23fdf68:	8828      	ldrh	r0, [r5, #0]
+ 23fdf6a:	f001 fcac 	bl	23ff8c6 <digitalWrite>
+ delay(1000);
+ 23fdf6e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 23fdf72:	f000 fc89 	bl	23fe888 <delay>
+ digitalWrite (green_pin, HIGH);
+ 23fdf76:	8828      	ldrh	r0, [r5, #0]
+ 23fdf78:	2101      	movs	r1, #1
+ 23fdf7a:	f001 fca4 	bl	23ff8c6 <digitalWrite>
+ digitalWrite (blue_pin, LOW);
+ 23fdf7e:	2100      	movs	r1, #0
+ 23fdf80:	8820      	ldrh	r0, [r4, #0]
+ 23fdf82:	f001 fca0 	bl	23ff8c6 <digitalWrite>
+ delay(1000);
+ 23fdf86:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 23fdf8a:	f000 fc7d 	bl	23fe888 <delay>
+ digitalWrite (blue_pin, HIGH);
+ 23fdf8e:	2101      	movs	r1, #1
+ 23fdf90:	8820      	ldrh	r0, [r4, #0]
+ 23fdf92:	f001 fc98 	bl	23ff8c6 <digitalWrite>
+ delay(100);
+ 23fdf96:	2064      	movs	r0, #100	; 0x64
+ 23fdf98:	f000 fc76 	bl	23fe888 <delay>
+  soil();                                 // Let's get the initial reading before moving to interval readings
+ 23fdf9c:	f7ff fe22 	bl	23fdbe4 <_Z4soilv>
+  U_V();
+ 23fdfa0:	f7ff feaa 	bl	23fdcf8 <_Z3U_Vv>
+  Error_states ();
+ 23fdfa4:	f7ff feea 	bl	23fdd7c <_Z12Error_statesv>
+}
+ 23fdfa8:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+  publish();
+ 23fdfac:	f7ff bf44 	b.w	23fde38 <_Z7publishv>
+ 23fdfb0:	023fe9bb 	.word	0x023fe9bb
+ 23fdfb4:	1007ad08 	.word	0x1007ad08
+ 23fdfb8:	023ffdc0 	.word	0x023ffdc0
+ 23fdfbc:	023fdb1d 	.word	0x023fdb1d
+ 23fdfc0:	1007acf8 	.word	0x1007acf8
+ 23fdfc4:	023ffdc6 	.word	0x023ffdc6
+ 23fdfc8:	023fdb65 	.word	0x023fdb65
+ 23fdfcc:	1007acf4 	.word	0x1007acf4
+ 23fdfd0:	1007ad0c 	.word	0x1007ad0c
 
 023fdfd4 <loop>:
 
@@ -1039,13 +1042,13 @@ unsigned long now = millis();
  23fdfe6:	6010      	str	r0, [r2, #0]
     
     soil();
- 23fdfe8:	f7ff fe72 	bl	23fdcd0 <_Z4soilv>
+ 23fdfe8:	f7ff fdfc 	bl	23fdbe4 <_Z4soilv>
     U_V();
- 23fdfec:	f7ff fefa 	bl	23fdde4 <_Z3U_Vv>
+ 23fdfec:	f7ff fe84 	bl	23fdcf8 <_Z3U_Vv>
     Error_states ();
- 23fdff0:	f7ff ff3a 	bl	23fde68 <_Z12Error_statesv>
+ 23fdff0:	f7ff fec4 	bl	23fdd7c <_Z12Error_statesv>
     publish();
- 23fdff4:	f7ff ff96 	bl	23fdf24 <_Z7publishv>
+ 23fdff4:	f7ff ff20 	bl	23fde38 <_Z7publishv>
 	} 
 
   if ((new_soil_level != soil_level) || (new_sun_light_level != sun_light_level)) {
@@ -1062,16 +1065,16 @@ unsigned long now = millis();
  23fe00c:	429a      	cmp	r2, r3
  23fe00e:	d009      	beq.n	23fe024 <loop+0x50>
     soil();
- 23fe010:	f7ff fe5e 	bl	23fdcd0 <_Z4soilv>
+ 23fe010:	f7ff fde8 	bl	23fdbe4 <_Z4soilv>
     U_V();
- 23fe014:	f7ff fee6 	bl	23fdde4 <_Z3U_Vv>
+ 23fe014:	f7ff fe70 	bl	23fdcf8 <_Z3U_Vv>
     Error_states ();
- 23fe018:	f7ff ff26 	bl	23fde68 <_Z12Error_statesv>
+ 23fe018:	f7ff feb0 	bl	23fdd7c <_Z12Error_statesv>
     publish();
   }
  23fe01c:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
     publish();
- 23fe020:	f7ff bf80 	b.w	23fdf24 <_Z7publishv>
+ 23fe020:	f7ff bf0a 	b.w	23fde38 <_Z7publishv>
  23fe024:	bd08      	pop	{r3, pc}
  23fe026:	bf00      	nop
  23fe028:	1007ae50 	.word	0x1007ae50
@@ -2483,7 +2486,7 @@ void particle::detail::futureCallbackWrapper(void* data) {
  23fe8d8:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
     delete callbackPtr;
  23fe8dc:	2110      	movs	r1, #16
- 23fe8de:	f7ff b91a 	b.w	23fdb16 <_ZdlPvj>
+ 23fe8de:	f7ff b912 	b.w	23fdb06 <_ZdlPvj>
 
 023fe8e2 <_ZNSt14_Function_baseD1Ev>:
     ~_Function_base()
@@ -2563,7 +2566,7 @@ void particle::detail::futureCallbackWrapper(void* data) {
  23fe92e:	b510      	push	{r4, lr}
  23fe930:	4604      	mov	r4, r0
  23fe932:	2110      	movs	r1, #16
- 23fe934:	f7ff f8ef 	bl	23fdb16 <_ZdlPvj>
+ 23fe934:	f7ff f8e7 	bl	23fdb06 <_ZdlPvj>
  23fe938:	4620      	mov	r0, r4
  23fe93a:	bd10      	pop	{r4, pc}
 
@@ -2660,7 +2663,7 @@ inline particle::Error::~Error() {
  23fe98a:	f7ff ffaa 	bl	23fe8e2 <_ZNSt14_Function_baseD1Ev>
  23fe98e:	2110      	movs	r1, #16
  23fe990:	4628      	mov	r0, r5
- 23fe992:	f7ff f8c0 	bl	23fdb16 <_ZdlPvj>
+ 23fe992:	f7ff f8b8 	bl	23fdb06 <_ZdlPvj>
  23fe996:	f104 0308 	add.w	r3, r4, #8
  23fe99a:	681d      	ldr	r5, [r3, #0]
         delete onError_.load(std::memory_order_relaxed);
@@ -2669,11 +2672,11 @@ inline particle::Error::~Error() {
  23fe9a0:	f7ff ff9f 	bl	23fe8e2 <_ZNSt14_Function_baseD1Ev>
  23fe9a4:	2110      	movs	r1, #16
  23fe9a6:	4628      	mov	r0, r5
- 23fe9a8:	f7ff f8b5 	bl	23fdb16 <_ZdlPvj>
+ 23fe9a8:	f7ff f8ad 	bl	23fdb06 <_ZdlPvj>
  23fe9ac:	4620      	mov	r0, r4
  23fe9ae:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
  23fe9b2:	2114      	movs	r1, #20
- 23fe9b4:	f7ff b8af 	b.w	23fdb16 <_ZdlPvj>
+ 23fe9b4:	f7ff b8a7 	b.w	23fdb06 <_ZdlPvj>
  23fe9b8:	bd38      	pop	{r3, r4, r5, pc}
 
 023fe9ba <_ZN10CloudClass22call_raw_user_functionEPvPKcS0_>:
@@ -2816,7 +2819,7 @@ bool CloudClass::register_function(cloud_function_t fn, void* data, const char* 
  23fea3e:	f7ff ff26 	bl	23fe88e <_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EED1Ev>
  23fea42:	2108      	movs	r1, #8
  23fea44:	4628      	mov	r0, r5
- 23fea46:	f7ff f866 	bl	23fdb16 <_ZdlPvj>
+ 23fea46:	f7ff f85e 	bl	23fdb06 <_ZdlPvj>
         return p;
     }
  23fea4a:	4620      	mov	r0, r4
@@ -2892,7 +2895,7 @@ bool CloudClass::register_function(cloud_function_t fn, void* data, const char* 
 	__shared_count(_Ptr __p) : _M_pi(0)
  23fea9a:	460d      	mov	r5, r1
 	      _M_pi = new _Sp_counted_ptr<_Ptr, _Lp>(__p);
- 23fea9c:	f7ff f837 	bl	23fdb0e <_Znwj>
+ 23fea9c:	f7ff f82f 	bl	23fdafe <_Znwj>
  23feaa0:	b128      	cbz	r0, 23feaae <_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EEC1IPN8particle6detail10FutureImplIbNS5_13FutureContextEEEEET_+0x1e>
       : _M_use_count(1), _M_weak_count(1) { }
  23feaa2:	2301      	movs	r3, #1
@@ -3001,7 +3004,7 @@ bool CloudClass::register_function(cloud_function_t fn, void* data, const char* 
             delete callbackPtr;
  23feb36:	2110      	movs	r1, #16
  23feb38:	4630      	mov	r0, r6
- 23feb3a:	f7fe ffec 	bl	23fdb16 <_ZdlPvj>
+ 23feb3a:	f7fe ffe4 	bl	23fdb06 <_ZdlPvj>
         p_->setError(std::move(error));
  23feb3e:	4668      	mov	r0, sp
  23feb40:	f7ff ff0d 	bl	23fe95e <_ZN8particle5ErrorD1Ev>
@@ -3028,7 +3031,7 @@ bool CloudClass::register_function(cloud_function_t fn, void* data, const char* 
             auto callbackPtr = new std::function<void()>(std::bind(callback, std::forward<ArgsT>(args)...));
  23feb5e:	2010      	movs	r0, #16
  23feb60:	f8ad 501c 	strh.w	r5, [sp, #28]
- 23feb64:	f7fe ffd3 	bl	23fdb0e <_Znwj>
+ 23feb64:	f7fe ffcb 	bl	23fdafe <_Znwj>
  23feb68:	4605      	mov	r5, r0
  23feb6a:	b1e8      	cbz	r0, 23feba8 <_ZN8particle11PromiseBaseIbNS_6detail13FutureContextEE8setErrorENS_5ErrorE+0xd0>
     _Function_base() : _M_manager(nullptr) { }
@@ -3036,7 +3039,7 @@ bool CloudClass::register_function(cloud_function_t fn, void* data, const char* 
  23feb6e:	6087      	str	r7, [r0, #8]
 	{ __functor._M_access<_Functor*>() = new _Functor(std::move(__f)); }
  23feb70:	2018      	movs	r0, #24
- 23feb72:	f7fe ffcc 	bl	23fdb0e <_Znwj>
+ 23feb72:	f7fe ffc4 	bl	23fdafe <_Znwj>
  23feb76:	4604      	mov	r4, r0
  23feb78:	b188      	cbz	r0, 23feb9e <_ZN8particle11PromiseBaseIbNS_6detail13FutureContextEE8setErrorENS_5ErrorE+0xc6>
 	std::swap(_M_functor, __x._M_functor);
@@ -3130,7 +3133,7 @@ Future<bool> CloudClass::publish_event(const char *eventName, const char *eventD
  23febf2:	f8ad 3018 	strh.w	r3, [sp, #24]
  23febf6:	f7ff fea5 	bl	23fe944 <_ZN8particle5ErrorC1EOS0_>
  23febfa:	2014      	movs	r0, #20
- 23febfc:	f7fe ff87 	bl	23fdb0e <_Znwj>
+ 23febfc:	f7fe ff7f 	bl	23fdafe <_Znwj>
  23fec00:	4604      	mov	r4, r0
  23fec02:	b148      	cbz	r0, 23fec18 <_ZN10CloudClass13publish_eventEPKcS1_iN8particle5FlagsI15PublishFlagTypehEE+0x4c>
       constexpr atomic(_Tp __i) noexcept : _M_i(__i) { }
@@ -3181,7 +3184,7 @@ Future<bool> CloudClass::publish_event(const char *eventName, const char *eventD
  23fec3e:	e9cd 4408 	strd	r4, r4, [sp, #32]
     d.size = sizeof(spark_send_event_data);
  23fec42:	9307      	str	r3, [sp, #28]
- 23fec44:	f7fe ff63 	bl	23fdb0e <_Znwj>
+ 23fec44:	f7fe ff5b 	bl	23fdafe <_Znwj>
  23fec48:	4601      	mov	r1, r0
  23fec4a:	b118      	cbz	r0, 23fec54 <_ZN10CloudClass13publish_eventEPKcS1_iN8particle5FlagsI15PublishFlagTypehEE+0x88>
       constexpr __atomic_base(__pointer_type __p) noexcept : _M_p (__p) { }
@@ -3199,7 +3202,7 @@ Future<bool> CloudClass::publish_event(const char *eventName, const char *eventD
         return new detail::FutureImplPtr<ResultT, ContextT>(p_);
  23fec5e:	2008      	movs	r0, #8
  23fec60:	9308      	str	r3, [sp, #32]
- 23fec62:	f7fe ff54 	bl	23fdb0e <_Znwj>
+ 23fec62:	f7fe ff4c 	bl	23fdafe <_Znwj>
  23fec66:	4604      	mov	r4, r0
  23fec68:	b110      	cbz	r0, 23fec70 <_ZN10CloudClass13publish_eventEPKcS1_iN8particle5FlagsI15PublishFlagTypehEE+0xa4>
  23fec6a:	a903      	add	r1, sp, #12
@@ -3296,14 +3299,14 @@ class Promise: public PromiseBase<ResultT, ContextT> {
 	  delete __victim._M_access<_Functor*>();
  23fed08:	2118      	movs	r1, #24
  23fed0a:	4620      	mov	r0, r4
- 23fed0c:	f7fe ff03 	bl	23fdb16 <_ZdlPvj>
+ 23fed0c:	f7fe fefb 	bl	23fdb06 <_ZdlPvj>
  23fed10:	e7ea      	b.n	23fece8 <_ZNSt17_Function_handlerIFvvESt5_BindIFSt8functionIFvRKN8particle5ErrorEEES4_EEE10_M_managerERSt9_Any_dataRKSC_St18_Manager_operation+0xc>
 	    new _Functor(*__source._M_access<const _Functor*>());
  23fed12:	2018      	movs	r0, #24
 	  __dest._M_access<_Functor*>() =
  23fed14:	680e      	ldr	r6, [r1, #0]
 	    new _Functor(*__source._M_access<const _Functor*>());
- 23fed16:	f7fe fefa 	bl	23fdb0e <_Znwj>
+ 23fed16:	f7fe fef2 	bl	23fdafe <_Znwj>
  23fed1a:	4604      	mov	r4, r0
  23fed1c:	b150      	cbz	r0, 23fed34 <_ZNSt17_Function_handlerIFvvESt5_BindIFSt8functionIFvRKN8particle5ErrorEEES4_EEE10_M_managerERSt9_Any_dataRKSC_St18_Manager_operation+0x58>
 	explicit _GLIBCXX20_CONSTEXPR
@@ -3430,7 +3433,7 @@ void publishCompletionCallback(int error, const void* data, void* callbackData, 
             delete callbackPtr;
  23fede0:	2110      	movs	r1, #16
  23fede2:	4630      	mov	r0, r6
- 23fede4:	f7fe fe97 	bl	23fdb16 <_ZdlPvj>
+ 23fede4:	f7fe fe8f 	bl	23fdb06 <_ZdlPvj>
  23fede8:	e7cf      	b.n	23fed8a <_ZN12_GLOBAL__N_125publishCompletionCallbackEiPKvPvS2_+0x32>
 	: _M_f(__f), _M_bound_args(std::forward<_Args>(__args)...)
  23fedea:	4631      	mov	r1, r6
@@ -3441,14 +3444,14 @@ void publishCompletionCallback(int error, const void* data, void* callbackData, 
             auto callbackPtr = new std::function<void()>(std::bind(callback, std::forward<ArgsT>(args)...));
  23fedf4:	2010      	movs	r0, #16
  23fedf6:	f88d 301c 	strb.w	r3, [sp, #28]
- 23fedfa:	f7fe fe88 	bl	23fdb0e <_Znwj>
+ 23fedfa:	f7fe fe80 	bl	23fdafe <_Znwj>
  23fedfe:	4605      	mov	r5, r0
  23fee00:	b1d0      	cbz	r0, 23fee38 <_ZN12_GLOBAL__N_125publishCompletionCallbackEiPKvPvS2_+0xe0>
     _Function_base() : _M_manager(nullptr) { }
  23fee02:	6087      	str	r7, [r0, #8]
 	{ __functor._M_access<_Functor*>() = new _Functor(std::move(__f)); }
  23fee04:	2014      	movs	r0, #20
- 23fee06:	f7fe fe82 	bl	23fdb0e <_Znwj>
+ 23fee06:	f7fe fe7a 	bl	23fdafe <_Znwj>
  23fee0a:	4604      	mov	r4, r0
  23fee0c:	b178      	cbz	r0, 23fee2e <_ZN12_GLOBAL__N_125publishCompletionCallbackEiPKvPvS2_+0xd6>
 	std::swap(_M_functor, __x._M_functor);
@@ -3528,14 +3531,14 @@ void publishCompletionCallback(int error, const void* data, void* callbackData, 
 	  delete __victim._M_access<_Functor*>();
  23fee7c:	2114      	movs	r1, #20
  23fee7e:	4620      	mov	r0, r4
- 23fee80:	f7fe fe49 	bl	23fdb16 <_ZdlPvj>
+ 23fee80:	f7fe fe41 	bl	23fdb06 <_ZdlPvj>
  23fee84:	e7ee      	b.n	23fee64 <_ZNSt17_Function_handlerIFvvESt5_BindIFSt8functionIFvRKbEEbEEE10_M_managerERSt9_Any_dataRKSA_St18_Manager_operation+0xc>
 	    new _Functor(*__source._M_access<const _Functor*>());
  23fee86:	2014      	movs	r0, #20
 	  __dest._M_access<_Functor*>() =
  23fee88:	680e      	ldr	r6, [r1, #0]
 	    new _Functor(*__source._M_access<const _Functor*>());
- 23fee8a:	f7fe fe40 	bl	23fdb0e <_Znwj>
+ 23fee8a:	f7fe fe38 	bl	23fdafe <_Znwj>
  23fee8e:	4605      	mov	r5, r0
  23fee90:	b120      	cbz	r0, 23fee9c <_ZNSt17_Function_handlerIFvvESt5_BindIFSt8functionIFvRKbEEbEEE10_M_managerERSt9_Any_dataRKSA_St18_Manager_operation+0x44>
       _Bind(const _Bind&) = default;
@@ -3744,7 +3747,7 @@ void TwoWire::flush(void)
  23fef66:	b510      	push	{r4, lr}
  23fef68:	4604      	mov	r4, r0
  23fef6a:	2114      	movs	r1, #20
- 23fef6c:	f7fe fdd3 	bl	23fdb16 <_ZdlPvj>
+ 23fef6c:	f7fe fdcb 	bl	23fdb06 <_ZdlPvj>
  23fef70:	4620      	mov	r0, r4
  23fef72:	bd10      	pop	{r4, pc}
 
@@ -3866,7 +3869,7 @@ size_t TwoWire::requestFrom(const WireTransmission& transfer) {
  23ff01a:	b510      	push	{r4, lr}
  23ff01c:	4604      	mov	r4, r0
  23ff01e:	2118      	movs	r1, #24
- 23ff020:	f7fe fd79 	bl	23fdb16 <_ZdlPvj>
+ 23ff020:	f7fe fd71 	bl	23fdb06 <_ZdlPvj>
  23ff024:	4620      	mov	r0, r4
  23ff026:	bd10      	pop	{r4, pc}
 
@@ -3940,7 +3943,7 @@ size_t IPAddress::printTo(Print& p) const
  23ff06e:	f7ff f951 	bl	23fe314 <inet_inet_ntop>
       return write((const uint8_t *)str, strlen(str));
  23ff072:	4668      	mov	r0, sp
- 23ff074:	f7fe fd26 	bl	23fdac4 <strlen>
+ 23ff074:	f7fe fd1e 	bl	23fdab4 <strlen>
  23ff078:	6833      	ldr	r3, [r6, #0]
  23ff07a:	4602      	mov	r2, r0
  23ff07c:	4669      	mov	r1, sp
@@ -4401,7 +4404,7 @@ size_t Print::write(const uint8_t *buffer, size_t size)
  23ff2ae:	b159      	cbz	r1, 23ff2c8 <_ZN5Print5writeEPKc+0x20>
       return write((const uint8_t *)str, strlen(str));
  23ff2b0:	9101      	str	r1, [sp, #4]
- 23ff2b2:	f7fe fc07 	bl	23fdac4 <strlen>
+ 23ff2b2:	f7fe fbff 	bl	23fdab4 <strlen>
  23ff2b6:	4602      	mov	r2, r0
  23ff2b8:	4620      	mov	r0, r4
  23ff2ba:	6823      	ldr	r3, [r4, #0]
@@ -4723,7 +4726,7 @@ String::String(const __FlashStringHelper *pstr)
 	if (cstr) copy(cstr, strlen(cstr));
  23ff40a:	4608      	mov	r0, r1
  23ff40c:	9101      	str	r1, [sp, #4]
- 23ff40e:	f7fe fb59 	bl	23fdac4 <strlen>
+ 23ff40e:	f7fe fb51 	bl	23fdab4 <strlen>
  23ff412:	9901      	ldr	r1, [sp, #4]
  23ff414:	4602      	mov	r2, r0
  23ff416:	4620      	mov	r0, r4
@@ -4809,7 +4812,7 @@ unsigned char String::equals(const char *cstr) const
  23ff470:	7800      	ldrb	r0, [r0, #0]
  23ff472:	e7f5      	b.n	23ff460 <_ZNK6String6equalsEPKc+0xa>
 	return strcmp(buffer, cstr) == 0;
- 23ff474:	f7fe fb1c 	bl	23fdab0 <strcmp>
+ 23ff474:	f7fe fb14 	bl	23fdaa0 <strcmp>
  23ff478:	e7f2      	b.n	23ff460 <_ZNK6String6equalsEPKc+0xa>
 	...
 
@@ -4987,7 +4990,7 @@ size_t USARTSerial::write(uint8_t c)
  23ff520:	b510      	push	{r4, lr}
  23ff522:	4604      	mov	r4, r0
  23ff524:	2114      	movs	r1, #20
- 23ff526:	f7fe faf6 	bl	23fdb16 <_ZdlPvj>
+ 23ff526:	f7fe faee 	bl	23fdb06 <_ZdlPvj>
  23ff52a:	4620      	mov	r0, r4
  23ff52c:	bd10      	pop	{r4, pc}
 	...
@@ -5129,7 +5132,7 @@ class USBSerial : public Stream
  23ff5cc:	b510      	push	{r4, lr}
  23ff5ce:	4604      	mov	r4, r0
  23ff5d0:	2114      	movs	r1, #20
- 23ff5d2:	f7fe faa0 	bl	23fdb16 <_ZdlPvj>
+ 23ff5d2:	f7fe fa98 	bl	23fdb06 <_ZdlPvj>
  23ff5d6:	4620      	mov	r0, r4
  23ff5d8:	bd10      	pop	{r4, pc}
 	...
@@ -5186,14 +5189,14 @@ USBSerial::USBSerial(HAL_USB_USART_Serial serial, const HAL_USB_USART_Config& co
  23ff628:	d10f      	bne.n	23ff64a <_Z16_fetch_usbserialv+0x36>
  23ff62a:	4620      	mov	r0, r4
  23ff62c:	9101      	str	r1, [sp, #4]
- 23ff62e:	f7fe fa74 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ff62e:	f7fe fa6c 	bl	23fdb0a <__cxa_guard_acquire>
  23ff632:	9901      	ldr	r1, [sp, #4]
  23ff634:	b148      	cbz	r0, 23ff64a <_Z16_fetch_usbserialv+0x36>
  23ff636:	aa03      	add	r2, sp, #12
  23ff638:	4806      	ldr	r0, [pc, #24]	; (23ff654 <_Z16_fetch_usbserialv+0x40>)
  23ff63a:	f7ff ffcf 	bl	23ff5dc <_ZN9USBSerialC1E20HAL_USB_USART_SerialRK20HAL_USB_USART_Config>
  23ff63e:	4620      	mov	r0, r4
- 23ff640:	f7fe fa70 	bl	23fdb24 <__cxa_guard_release>
+ 23ff640:	f7fe fa68 	bl	23fdb14 <__cxa_guard_release>
  23ff644:	4804      	ldr	r0, [pc, #16]	; (23ff658 <_Z16_fetch_usbserialv+0x44>)
  23ff646:	f000 fa6e 	bl	23ffb26 <atexit>
 	return _usbserial;
@@ -5399,7 +5402,7 @@ void module_user_init_hook()
  23ff75e:	bf00      	nop
  23ff760:	1007b400 	.word	0x1007b400
  23ff764:	1007b404 	.word	0x1007b404
- 23ff768:	085ff680 	.word	0x085ff680
+ 23ff768:	085ff690 	.word	0x085ff690
  23ff76c:	1007b400 	.word	0x1007b400
  23ff770:	9a271c1e 	.word	0x9a271c1e
 
@@ -5570,13 +5573,13 @@ public:
  23ff860:	d10b      	bne.n	23ff87a <pinAvailable+0x52>
  23ff862:	4628      	mov	r0, r5
  23ff864:	9101      	str	r1, [sp, #4]
- 23ff866:	f7fe f958 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ff866:	f7fe f950 	bl	23fdb0a <__cxa_guard_acquire>
  23ff86a:	9901      	ldr	r1, [sp, #4]
  23ff86c:	b128      	cbz	r0, 23ff87a <pinAvailable+0x52>
  23ff86e:	480c      	ldr	r0, [pc, #48]	; (23ff8a0 <pinAvailable+0x78>)
  23ff870:	f7ff fd6e 	bl	23ff350 <_ZN8SPIClassC1E19hal_spi_interface_t>
  23ff874:	4628      	mov	r0, r5
- 23ff876:	f7fe f955 	bl	23fdb24 <__cxa_guard_release>
+ 23ff876:	f7fe f94d 	bl	23fdb14 <__cxa_guard_release>
   if((pin == SCK || pin == MOSI || pin == MISO) && hal_spi_is_enabled(SPI.interface()) == true)
  23ff87a:	4b09      	ldr	r3, [pc, #36]	; (23ff8a0 <pinAvailable+0x78>)
  23ff87c:	7818      	ldrb	r0, [r3, #0]
@@ -5760,7 +5763,7 @@ TwoWire& __fetch_global_Wire()
  23ff95e:	f011 0401 	ands.w	r4, r1, #1
  23ff962:	d111      	bne.n	23ff988 <_Z19__fetch_global_Wirev+0x34>
  23ff964:	4628      	mov	r0, r5
- 23ff966:	f7fe f8d8 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ff966:	f7fe f8d0 	bl	23fdb0a <__cxa_guard_acquire>
  23ff96a:	b168      	cbz	r0, 23ff988 <_Z19__fetch_global_Wirev+0x34>
  23ff96c:	4668      	mov	r0, sp
  23ff96e:	f7ff ffd7 	bl	23ff920 <_Z17acquireWireBufferv>
@@ -5769,7 +5772,7 @@ TwoWire& __fetch_global_Wire()
  23ff976:	4807      	ldr	r0, [pc, #28]	; (23ff994 <_Z19__fetch_global_Wirev+0x40>)
  23ff978:	f7ff fafc 	bl	23fef74 <_ZN7TwoWireC1E19hal_i2c_interface_tRK16hal_i2c_config_t>
  23ff97c:	4628      	mov	r0, r5
- 23ff97e:	f7fe f8d1 	bl	23fdb24 <__cxa_guard_release>
+ 23ff97e:	f7fe f8c9 	bl	23fdb14 <__cxa_guard_release>
  23ff982:	4805      	ldr	r0, [pc, #20]	; (23ff998 <_Z19__fetch_global_Wirev+0x44>)
  23ff984:	f000 f8cf 	bl	23ffb26 <atexit>
 	return wire;
@@ -5870,7 +5873,7 @@ hal_usart_buffer_config_t defaultUsartConfig() {
  23ffa06:	f011 0401 	ands.w	r4, r1, #1
  23ffa0a:	d111      	bne.n	23ffa30 <_Z22__fetch_global_Serial1v+0x34>
  23ffa0c:	4628      	mov	r0, r5
- 23ffa0e:	f7fe f884 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ffa0e:	f7fe f87c 	bl	23fdb0a <__cxa_guard_acquire>
  23ffa12:	b168      	cbz	r0, 23ffa30 <_Z22__fetch_global_Serial1v+0x34>
  23ffa14:	a801      	add	r0, sp, #4
  23ffa16:	f7ff ffdf 	bl	23ff9d8 <_Z20acquireSerial1Bufferv>
@@ -5879,7 +5882,7 @@ hal_usart_buffer_config_t defaultUsartConfig() {
  23ffa1e:	4807      	ldr	r0, [pc, #28]	; (23ffa3c <_Z22__fetch_global_Serial1v+0x40>)
  23ffa20:	f7ff fd86 	bl	23ff530 <_ZN11USARTSerialC1E21hal_usart_interface_tRK25hal_usart_buffer_config_t>
  23ffa24:	4628      	mov	r0, r5
- 23ffa26:	f7fe f87d 	bl	23fdb24 <__cxa_guard_release>
+ 23ffa26:	f7fe f875 	bl	23fdb14 <__cxa_guard_release>
  23ffa2a:	4805      	ldr	r0, [pc, #20]	; (23ffa40 <_Z22__fetch_global_Serial1v+0x44>)
  23ffa2c:	f000 f87b 	bl	23ffb26 <atexit>
     return serial1;
@@ -5907,7 +5910,7 @@ USARTSerial& __fetch_global_Serial2()
  23ffa4e:	07db      	lsls	r3, r3, #31
  23ffa50:	d411      	bmi.n	23ffa76 <_Z22__fetch_global_Serial2v+0x32>
  23ffa52:	4620      	mov	r0, r4
- 23ffa54:	f7fe f861 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ffa54:	f7fe f859 	bl	23fdb0a <__cxa_guard_acquire>
  23ffa58:	b168      	cbz	r0, 23ffa76 <_Z22__fetch_global_Serial2v+0x32>
  23ffa5a:	a801      	add	r0, sp, #4
  23ffa5c:	f7ff ffc2 	bl	23ff9e4 <_Z20acquireSerial2Bufferv>
@@ -5916,7 +5919,7 @@ USARTSerial& __fetch_global_Serial2()
  23ffa64:	4806      	ldr	r0, [pc, #24]	; (23ffa80 <_Z22__fetch_global_Serial2v+0x3c>)
  23ffa66:	f7ff fd63 	bl	23ff530 <_ZN11USARTSerialC1E21hal_usart_interface_tRK25hal_usart_buffer_config_t>
  23ffa6a:	4620      	mov	r0, r4
- 23ffa6c:	f7fe f85a 	bl	23fdb24 <__cxa_guard_release>
+ 23ffa6c:	f7fe f852 	bl	23fdb14 <__cxa_guard_release>
  23ffa70:	4804      	ldr	r0, [pc, #16]	; (23ffa84 <_Z22__fetch_global_Serial2v+0x40>)
  23ffa72:	f000 f858 	bl	23ffb26 <atexit>
 	return serial2;
@@ -5975,7 +5978,7 @@ USARTSerial& __fetch_global_Serial3()
  23ffaba:	07db      	lsls	r3, r3, #31
  23ffabc:	d411      	bmi.n	23ffae2 <_Z22__fetch_global_Serial3v+0x32>
  23ffabe:	4620      	mov	r0, r4
- 23ffac0:	f7fe f82b 	bl	23fdb1a <__cxa_guard_acquire>
+ 23ffac0:	f7fe f823 	bl	23fdb0a <__cxa_guard_acquire>
  23ffac4:	b168      	cbz	r0, 23ffae2 <_Z22__fetch_global_Serial3v+0x32>
  23ffac6:	a801      	add	r0, sp, #4
  23ffac8:	f7ff ff92 	bl	23ff9f0 <_Z20acquireSerial3Bufferv>
@@ -5984,7 +5987,7 @@ USARTSerial& __fetch_global_Serial3()
  23ffad0:	4806      	ldr	r0, [pc, #24]	; (23ffaec <_Z22__fetch_global_Serial3v+0x3c>)
  23ffad2:	f7ff fd2d 	bl	23ff530 <_ZN11USARTSerialC1E21hal_usart_interface_tRK25hal_usart_buffer_config_t>
  23ffad6:	4620      	mov	r0, r4
- 23ffad8:	f7fe f824 	bl	23fdb24 <__cxa_guard_release>
+ 23ffad8:	f7fe f81c 	bl	23fdb14 <__cxa_guard_release>
  23ffadc:	4804      	ldr	r0, [pc, #16]	; (23ffaf0 <_Z22__fetch_global_Serial3v+0x40>)
  23ffade:	f000 f822 	bl	23ffb26 <atexit>
 	return serial3;
@@ -6023,7 +6026,7 @@ void serialEventRun3()
  23ffb18:	00000000 	.word	0x00000000
 
 023ffb1c <_ZnajRKSt9nothrow_t>:
- 23ffb1c:	f7fd bff9 	b.w	23fdb12 <_Znaj>
+ 23ffb1c:	f7fd bff1 	b.w	23fdb02 <_Znaj>
 
 023ffb20 <_ZSt25__throw_bad_function_callv>:
  23ffb20:	b508      	push	{r3, lr}
@@ -6109,7 +6112,7 @@ void serialEventRun3()
  23ffbca:	4604      	mov	r4, r0
  23ffbcc:	4608      	mov	r0, r1
  23ffbce:	460d      	mov	r5, r1
- 23ffbd0:	f7fd ff78 	bl	23fdac4 <strlen>
+ 23ffbd0:	f7fd ff70 	bl	23fdab4 <strlen>
  23ffbd4:	1c42      	adds	r2, r0, #1
  23ffbd6:	4620      	mov	r0, r4
  23ffbd8:	4611      	mov	r1, r2
@@ -6205,23 +6208,23 @@ void serialEventRun3()
 	...
 
 023ffcc4 <dynalib_user>:
- 23ffcc4:	dad5 023f dafd 023f db01 023f 0000 0000     ..?...?...?.....
- 23ffcd4:	0030 0031 0032 0033 6157 6574 0072 7553     0.1.2.3.Water.Su
- 23ffce4:	6c6e 6769 7468 2000 6953 676e 656c 5220     nlight. Single R
- 23ffcf4:	6165 0064 4120 4743 2000 0025 5655 3d20     ead. ACG. %.UV =
- 23ffd04:	0020 6d4e 666a 3471 5a35 574d 5341 6477      .Nmjfq45ZMWASwd
- 23ffd14:	3644 5849 5145 784d 7831 7830 346a 5968     D6IXEQMx1x0xj4hY
- 23ffd24:	4376 7b00 7422 3a22 2522 2273 222c 656e     vC.{"t":"%s","ne
- 23ffd34:	5f77 7573 5f6e 696c 6867 5f74 656c 6576     w_sun_light_leve
- 23ffd44:	226c 253a 2c69 6e22 7765 735f 696f 5f6c     l":%i,"new_soil_
- 23ffd54:	656c 6576 226c 253a 2c69 7322 6e75 755f     level":%i,"sun_u
- 23ffd64:	7070 7265 3a22 6925 222c 7573 5f6e 6f6c     pper":%i,"sun_lo
- 23ffd74:	6577 2272 253a 2c69 7722 7461 7265 755f     wer":%i,"water_u
- 23ffd84:	7070 7265 3a22 6925 222c 6177 6574 5f72     pper":%i,"water_
- 23ffd94:	6f6c 6577 2272 253a 2c69 4822 4f32 455f     lower":%i,"H2O_E
- 23ffda4:	7272 726f 3a22 6925 222c 5655 455f 7272     rror":%i,"UV_Err
- 23ffdb4:	726f 3a22 6925 007d 6553 646e 735f 616d     or":%i}.Send_sma
- 23ffdc4:	7472 6f70 5f74 6164 6174 0000               rtpot_data..
+ 23ffcc4:	dac5 023f daed 023f daf1 023f 0000 0000     ..?...?...?.....
+ 23ffcd4:	0030 0031 0032 0033 5320 6e69 6c67 2065     0.1.2.3. Single 
+ 23ffce4:	6552 6461 2000 4341 0047 2520 5500 2056     Read. ACG. %.UV 
+ 23ffcf4:	203d 4e00 6a6d 7166 3534 4d5a 4157 7753     = .Nmjfq45ZMWASw
+ 23ffd04:	4464 4936 4558 4d51 3178 3078 6a78 6834     dD6IXEQMx1x0xj4h
+ 23ffd14:	7659 0043 227b 2274 223a 7325 2c22 6e22     YvC.{"t":"%s","n
+ 23ffd24:	7765 735f 6e75 6c5f 6769 7468 6c5f 7665     ew_sun_light_lev
+ 23ffd34:	6c65 3a22 6925 222c 656e 5f77 6f73 6c69     el":%i,"new_soil
+ 23ffd44:	6c5f 7665 6c65 3a22 6925 222c 7573 5f6e     _level":%i,"sun_
+ 23ffd54:	7075 6570 2272 253a 2c69 7322 6e75 6c5f     upper":%i,"sun_l
+ 23ffd64:	776f 7265 3a22 6925 222c 6177 6574 5f72     ower":%i,"water_
+ 23ffd74:	7075 6570 2272 253a 2c69 7722 7461 7265     upper":%i,"water
+ 23ffd84:	6c5f 776f 7265 3a22 6925 222c 3248 5f4f     _lower":%i,"H2O_
+ 23ffd94:	7245 6f72 2272 253a 2c69 5522 5f56 7245     Error":%i,"UV_Er
+ 23ffda4:	6f72 2272 253a 7d69 5300 6e65 5f64 6d73     ror":%i}.Send_sm
+ 23ffdb4:	7261 7074 746f 645f 7461 0061 6157 6574     artpot_data.Wate
+ 23ffdc4:	0072 7553 6c6e 6769 7468 0000               r.Sunlight..
 
 023ffdd0 <_ZTVSt15_Sp_counted_ptrIPN8particle6detail10FutureImplIbNS1_13FutureContextEEELN9__gnu_cxx12_Lock_policyE0EE>:
 	...

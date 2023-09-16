@@ -17,7 +17,7 @@ int val = 0;
 int ave_soil_val;                                 //  Determine ave reading from sample readings
 int soil_percentage;                              //  Map values
 int number_attempts = 10;                         //  Number of sample readings.  Higher number of samples will provide more accurate results.
-int soil_level = 0;
+int soil_level;
 int new_soil_level = 0;
 
 int min_raw_value = 1450;                         //  Adjust these with the values you determined       
@@ -32,7 +32,7 @@ char data[192];
 
 //int sun_type = 0;
 UDOUBLE UV,ALS;
-int sun_light_level = 0;
+int sun_light_level;
 int new_sun_light_level = 0;
 int sun_upper;
 int sun_lower;
@@ -81,10 +81,11 @@ void setup() {
   delay(100);
 
 
-  // if(LTR390_Init() != 0){                          
-  //   Serial.print("init err!!!");                   //  Waiting for sensot to initialise
-  //   while(1); 
-  //  }
+  if(LTR390_Init() != 0){
+    Particle.publish("LTR: Sensor not found", PRIVATE);                          
+    Serial.print("init err!!!");                   //  Waiting for sensot to initialise
+    while(1); 
+   }
 
   // LTR390_SetIntVal(5, 20);
   // pinMode(8, INPUT);                              // Interrupt pin
@@ -103,6 +104,11 @@ void setup() {
  digitalWrite (blue_pin, HIGH);
 
  delay(100);
+
+  soil();                                 // Let's get the initial reading before moving to interval readings
+  U_V();
+  Error_states ();
+  publish();
 
 }
 
@@ -215,6 +221,7 @@ new_soil_level = soil_level;
 void U_V() {
   
 UV = LTR390_UVS();
+
 
 Serial.print("UV = ");                            // DEBUG
 Serial.println(UV);                               // DEBUG 

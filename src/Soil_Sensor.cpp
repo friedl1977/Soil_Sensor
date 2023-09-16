@@ -120,6 +120,11 @@ void setup() {
 
  delay(100);
 
+  soil();                                 // Let's get the initial reading before moving to interval readings
+  U_V();
+  Error_states ();
+  publish();
+
 }
 
 int water_type(String command) {                                // Exposing function/variable to the cloud
