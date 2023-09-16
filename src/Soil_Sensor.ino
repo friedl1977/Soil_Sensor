@@ -13,14 +13,18 @@ unsigned long lastTime = 0;
 
 //int water_type = 0;
 int soil_pin = A5;                                //  Analog pin for sensor reading
+int val = 0;
 int ave_soil_val;                                 //  Determine ave reading from sample readings
 int soil_percentage;                              //  Map values
 int number_attempts = 10;                         //  Number of sample readings.  Higher number of samples will provide more accurate results.
 int soil_level = 0;
 int new_soil_level = 0;
 
-int water_upper = 0;
-int water_lower = 0;
+int min_raw_value = 1450;                         //  Adjust these with the values you determined       
+int max_raw_value = 2850;                         //  Adjust these with the values you determined
+
+int water_upper;
+int water_lower;
 int H2O_Error = 0;
 char data[192];
 
@@ -30,8 +34,8 @@ char data[192];
 UDOUBLE UV,ALS;
 int sun_light_level = 0;
 int new_sun_light_level = 0;
-int sun_upper = 0;
-int sun_lower = 0;
+int sun_upper;
+int sun_lower;
 int UV_Error = 0;
 
 
@@ -147,7 +151,7 @@ void soil() {
 
 switch (soil_level) {
 
-  case 0:                 // Plants that require frequent watering - Tropical
+  case 0:                 // Plants that require less watering - Succulent
     water_upper = 20;
     water_lower = 5;
     break;
@@ -158,8 +162,8 @@ switch (soil_level) {
     break;
 
   case 2:
-    water_upper = 60;     // Plants that require LESS watering
-    water_lower = 40;
+    water_upper = 60;     // Plants that require more watering - Tropical
+    water_lower = 20;
     break;
 
   default:
@@ -177,24 +181,26 @@ soil_percentage = 0;
   
     for (int i=0; i<number_attempts; i++) {       //  Start taking measurements
 
-        int val = analogRead(soil_pin);
+        val = analogRead(soil_pin);
         val_new = val;
         val_accum = (val_new + val_prev);   
 
         val_prev = val_accum;                     // Accumilated value over all samples 
+        delay(50);
     }
 
-ave_soil_val = val_accum/number_attempts;                 //  Determine average value
-soil_percentage = map(ave_soil_val, 3700, 1875,0,100);    //  Map average value
+ave_soil_val = val_accum/number_attempts;                   //  Determine average value
+//soil_percentage = map(ave_soil_val, 3700, 1875,0,100);    //  Map average value with pullup
+soil_percentage = map(ave_soil_val, max_raw_value, min_raw_value,0,100);      //  Map average value
 
 new_soil_level = soil_level;
 
-//  Serial.print(val_new);                           //  DEBUG
-//  Serial.println(" Single Read");                  //  DEBUG
-//  Serial.print(ave_soil_val);                      //  DEBUG
-//  Serial.println(" ACG");                          //  DEBUG
-//  Serial.print(soil_percentage);                   //  DEBUG
-//  Serial.println(" %");
+  Serial.print(val);                           //  DEBUG
+  Serial.println(" Single Read");                  //  DEBUG
+  Serial.print(ave_soil_val);                      //  DEBUG
+  Serial.println(" ACG");                          //  DEBUG
+  Serial.print(soil_percentage);                   //  DEBUG
+  Serial.println(" %");
 
   // Serial.print("Soil Moisture: ");                //  DEBUG
   // Serial.println(soil_level);                     //  DEBUG
@@ -267,10 +273,14 @@ if ((UV > sun_upper) || (UV < sun_lower)) {
 
 if (soil_percentage < water_lower) {
     digitalWrite (red_pin, LOW);                  // Red indicator when plant requires watering
+    digitalWrite (blue_pin, HIGH);
+    digitalWrite (green_pin, HIGH);
     H2O_Error = 1;
 
       } else if (soil_percentage > water_upper) {
         digitalWrite (blue_pin, LOW);             // Blue indicator when plant is overwatered
+        digitalWrite (green_pin, HIGH);
+        digitalWrite (red_pin, HIGH);
         H2O_Error = 1;
 
       } else {
@@ -297,8 +307,9 @@ void loop() {
 
 unsigned long now = millis();
 	 
-  if ((now - lastTime) >= 300000) {
+  if ((now - lastTime) >= 20000) {
 		lastTime = now;
+    
     soil();
     U_V();
     Error_states ();
